@@ -5,7 +5,7 @@ In the face of the ongoing burden of malaria, [PHA4GE](https://pha4ge.org/) has 
 
 The purpose of the PHA4GE Malaria specification is to provide a structure that enables consistent collection and formatting of malaria metadata in order to structure data consistently across disparate laboratory and epidemiological databases so that they can be harmonised for different uses. It embraces FAIR data stewardship principles and emphasises machine-actionability and consistency of data.
 
-The versioned specification is available from [GitHub](https://github.com/pha4ge/SARS-CoV-2-Contextual-Data-Specification). The PHA4GE's Malaria Data Specification Processing Tool aims to collect the human readable terms and convert them to the machine processable formats in JSON schema language.
+The versioned specification is available from [GitHub](https://github.com/pha4ge/Malaria-Community-Metadata-Standard). The PHA4GE's Malaria Data Specification Processing Tool aims to collect the human readable terms and convert them to the machine processable formats in JSON schema language.
 
 ## The Data Specification Processing Tool
 The aim of this tool is to take a simple tabular description of fields and convert it to JSON schema language so that the information is machine processable and therefore possible to be harmonised for different uses.
