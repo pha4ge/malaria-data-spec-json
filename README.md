@@ -3,7 +3,7 @@
 ## Motivation
 In the face of the ongoing burden of malaria, [PHA4GE](https://pha4ge.org/) has identified a clear and present need for a fit-for-purpose, open source malaria contextual data standard. The specification is implementable via a collection template, as well as an array of protocols and tools to support the harmonisation and submission of sequence data and contextual information to public repositories.
 
-The purpose of the PHA4GE Malaria specification is to provide a structure that enables consistent collection and formatting of malaria metadata in order to structure data consistently across disparate laboratory and epidemiological databases so that they can be harmonised for different uses. It embraces FAIR data stewardship principles and emphasises machine-actionability and consistency of data. The versioned specification is available from [GitHub](https://github.com/pha4ge/Malaria-Community-Metadata-Standard).
+The purpose of the [PHA4GE Malaria specification]((https://github.com/pha4ge/Malaria-Community-Metadata-Standard) is to provide a structure that enables consistent collection and formatting of malaria metadata in order to structure data consistently across disparate laboratory and epidemiological databases so that they can be harmonised for different uses. It embraces FAIR data stewardship principles and emphasises machine-actionability and consistency of data.
 
 The PHA4GE's Malaria Data Specification Processing Tool aims to collect the human readable terms and convert them to the machine processable formats in JSON schema language.
 
@@ -41,5 +41,5 @@ Currently, only JSON schema format is being created by this tool. Each property 
 For more information and/or assistance, contact `elulamba@pha4ge.org` or the issue page of this repository.
 
 ## Acknowledgements
-This tool is adapted from PHA4GE's [SARS-CoV-2 Data Specification Processing Tool](https://github.com/pha4ge/SARS-CoV-2-Contextual-Data-Specification), which pioneered this approach of converting a simple tabular description of fields into machine-processable JSON schema language. `malaria_table_json.py` builds on that tool's design, adapted to the column layout and value-type vocabulary of the Malaria Standardised Terms tabular.
+This tool is adapted from PHA4GE's [SARS-CoV-2 Data Specification Processing Tool](https://github.com/pha4ge/sars-cov-2-data-spec-json), which pioneered this approach of converting a simple tabular description of fields into machine-processable JSON schema language. `malaria_table_json.py` builds on that tool's design, adapted to the column layout and value-type vocabulary of the Malaria Standardised Terms tabular.
 
