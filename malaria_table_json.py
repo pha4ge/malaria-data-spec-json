@@ -165,7 +165,7 @@ def parse_properties_table(path_to_properties_table):
     properties = {}
     seen_keys = set()
 
-    with open(path_to_properties_table, newline='') as f:
+    with open(path_to_properties_table, newline='', encoding='utf-8-sig') as f:
         reader = csv.DictReader(f, delimiter=SEPARATOR, quotechar=QUOTE)
         for row in reader:
             raw_label = row.get('Field', '') or ''
@@ -252,7 +252,7 @@ def get_required_fields(path_to_properties_table):
     """
     required_fields = []
     seen_keys = set()
-    with open(path_to_properties_table, newline='') as f:
+    with open(path_to_properties_table, newline='', encoding='utf-8-sig') as f:
         reader = csv.DictReader(f, delimiter=SEPARATOR, quotechar=QUOTE)
         for row in reader:
             raw_label = row.get('Field', '') or ''
@@ -263,7 +263,7 @@ def get_required_fields(path_to_properties_table):
                 property_key = 'field_' + fallback if fallback else None
             if property_key:
                 seen_keys.add(property_key)
-            if property_key and (row.get('Required/Optional', '') or '').strip() == 'Required':
+            if property_key and (row.get('Required/Optional') or '').strip() == 'Required':
                 required_fields.append(property_key)
 
     return required_fields

@@ -1,0 +1,2335 @@
+{
+  "$schema": "http://json-schema.org/draft/2019-09/schema#",
+  "title": "PHA4GE Malaria Contextual Data Schema",
+  "type": "object",
+  "properties": {
+    "specimen_collector_sample_id": {
+      "description": "An identifier data field which describes the user-defined name for the sample.",
+      "guidance": "The sample ID should represent the identifier assigned to the sample at time of collection, for which all the descriptive information applies. Every sample ID from a single submitter must be unique. The ID may use any format, but should be concise, consistent within the lab, and informative where possible. If the original sample ID is unknown or cannot be provided, leave blank or provide a null value.",
+      "ontology": "GENEPIO:0001123",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "DDIC-001-C2-F03"
+      ]
+    },
+    "case_id": {
+      "description": "A data field which describes the identifier used to specify an epidemiologically detected case of disease.",
+      "guidance": "Provide the case identifer. The case ID greatly facilitates linkage between laboratory and epidemiological data. The case ID may be considered identifiable information. Consult the data steward before sharing.",
+      "ontology": "GENEPIO:0100281",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "Case-4321"
+      ]
+    },
+    "umbrella_bioproject_accession": {
+      "description": "An identifier field which describes the International Nucleotide Sequence Database Collaboration (INSDC) umbrella accession number of the BioProject to which the BioSample belongs.",
+      "guidance": "Required if submission is linked to an umbrella BioProject. An umbrella BioProject links together related BioProjects. A valid BioProject umbrella accession has prefix PRJN, PRJE or PRJD. Your laboratory can have one or many BioProjects.",
+      "ontology": "GENEPIO:0001133",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "PRJNA1031577"
+      ]
+    },
+    "bioproject_accession": {
+      "description": "An identifier field which describes the International Nucleotide Sequence Database Collaboration (INSDC) accession number of the BioProject(s) to which the BioSample belongs.",
+      "guidance": "Required if submission is linked to a BioProject. BioProjects are an organizing tool that links together raw sequence data, assemblies, and their associated metadata. A valid BioProject accession has prefix PRJN, PRJE or PRJD and is created once at the beginning of a new sequencing project. Your laboratory can have one or many BioProjects.",
+      "ontology": "GENEPIO:0001136",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "PRJNA1031597"
+      ]
+    },
+    "biosample_accession": {
+      "description": "An identifier field which describes the identifier assigned to a BioSample in International Nucleotide Sequence Database Collaboration (INSDC) archives.",
+      "guidance": "Store the accession returned from the BioSample submission. NCBI BioSamples will have the prefix SAMN.",
+      "ontology": "GENEPIO:0001139",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "SAMN37948342"
+      ]
+    },
+    "sra_accession": {
+      "description": "An identifier field which describes the Sequence Read Archive (SRA), European Nucleotide Archive (ENA) or DDBJ Sequence Read Archive (DRA) identifier linking raw read data, methodological metadata and quality control metrics submitted to the International Nucleotide Sequence Database Collaboration (INSDC).",
+      "guidance": "Store the accession assigned to the submitted \"run\". NCBI-SRA accessions start with SRR.",
+      "ontology": "GENEPIO:0001142",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "SRS19258924"
+      ]
+    },
+    "insdc_assembly_accession": {
+      "description": "A unique identifier that denotes an assembly record submitted to the International Nucleotide Sequence Database Collaboration (INSDC).",
+      "guidance": "Store the versioned accession assigned to the submitted sequence e.g. the GenBank accession version.",
+      "ontology": "GENEPIO:0101204",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "GCA_000002765.3"
+      ]
+    },
+    "host_specimen_voucher": {
+      "description": "Identifier for the physical specimen.",
+      "guidance": "Include a URI (Uniform Resource Identifier) in the form of a URL providing a direct link to the physical host specimen. If the specimen was destroyed in the process of analysis, electronic images (e-vouchers) are an adequate substitute for a physical host voucher specimen. If a URI is not available, a museum-provided globally unique identifier (GUID) can be used. If no persistent unique identifier is available, follow the INSDC guidance for populating the voucher_specimen attribute using standard triplets for institution codes (i.e., /specimen_voucher=.[<institution-code>:[<collection-code>:]]<specimen_id>.): http://www.insdc.org/controlled-vocabulary-specimenvoucher-qualifier",
+      "ontology": "GENEPIO:0100283",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "URI example: http://portal.vertnet.org/o/fmnh/mammals?id=33e55cfe-330b-40d9-aaae-8d042cba7542, INSDC triplet example: UAM:Mamm:52179"
+      ]
+    },
+    "data_custodian": {
+      "description": "The person (or organization) responsible for a specific data set.",
+      "guidance": "The official organization name should be used (avoid abbreviations, alternate names as much as possible).",
+      "ontology": "NCIT:C165210",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "National Malaria Control Program, Ghana Health Service"
+      ]
+    },
+    "sample_collected_by": {
+      "description": "The name of the organization with which the sample collector is affiliated.",
+      "guidance": "The name of the agency should be written out in full, (with minor exceptions) and be consistent across multiple submissions.",
+      "ontology": "GENEPIO:0001153",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Centre for Infectious Disease Research in Zambia"
+      ]
+    },
+    "sample_collector_contact_name": {
+      "description": "A data field which describes the name or job title of the contact responsible for follow-up regarding the sample.",
+      "guidance": "Provide the name of an individual or their job title. As personnel turnover may render the contact's name obsolete, it is more preferable to provide a job title for ensuring accuracy of information and institutional memory. If the information is unknown or cannot be provided, leave blank or provide a null value.",
+      "ontology": "GENEPIO:0100432",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Baraka Nehema"
+      ]
+    },
+    "sample_collector_contact_email": {
+      "description": "The email address of the contact responsible for follow-up regarding the sample.",
+      "guidance": "The email address can represent a specific individual or laboratory.",
+      "ontology": "GENEPIO:0001156",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Lab_Business@cidrz.org"
+      ]
+    },
+    "sample_collector_contact_address": {
+      "description": "The mailing address of the agency submitting the sample.",
+      "guidance": "The mailing address should be in the format: Street number and name, City, State/Province/Region, Country, Postal Code/Zip Code",
+      "ontology": "GENEPIO:0001158",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "examples": [
+        "CIDRZ Central Laboratory, Kalingalinga Health Centre, Corner of Alick Nkhata and Condor Roads, Kalingalinga, Lusaka, Zambia."
+      ]
+    },
+    "purpose_of_sampling": {
+      "description": "The reason that the sample was collected.",
+      "guidance": "Select a value from the pick list in the template.",
+      "ontology": "GENEPIO:0001198",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Longitudinal surveillance [HSO:0000400]"
+      ]
+    },
+    "purpose_of_sampling_details": {
+      "description": "Further details pertaining to the reason the sample was collected.",
+      "guidance": "Provide a free text description of the sampling strategy or samples collected.",
+      "ontology": "GENEPIO:0001200",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "To investigate how a specific mutation (C101F) in the chloroquine resistance transporter protein (PfCRT) of Plasmodium falciparum can confer resistance to the antimalarial drug piperaquine (PPQ) and potentially alter susceptibility to other drugs. [https://doi.org/10.1128/mbio.00303-17]"
+      ]
+    },
+    "mode_of_sampling": {
+      "description": "",
+      "guidance": "",
+      "ontology": "",
+      "source_value_type": "",
+      "type": "string",
+      "examples": [
+        "Reactive, Active, Passive surveillance, etc."
+      ]
+    },
+    "sampling_type": {
+      "description": "A sampling type is a classification datum that classifies the type of sampling approach used to take a sample. [Allotrope]",
+      "guidance": "Pick a value from the pick list provided.  If the desired value is not available, select \"Other\" from the pick list and add a free text description of the desired sampling type. If the information is unknown or cannot be provided, leave blank or provide a null value.",
+      "ontology": "AFO_/result#AFR:0002610",
+      "source_value_type": "Permitted value, or Other (+ Free text)",
+      "type": "string",
+      "examples": [
+        "Reactive surveillance, Active surveillance, Passive surveillance, etc."
+      ]
+    },
+    "study_id": {
+      "description": "A sequence of characters used to identify, name, or characterize the study.",
+      "guidance": "Provide the study identifier if the sample was collected as part of a study.",
+      "ontology": "NCIT_C83082",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "1001-PF-ML-DJIMDE"
+      ]
+    },
+    "study_short_title": {
+      "description": "An official descriptive name of a document, e.g. the long name of a study protocol provided by the study sponsor.",
+      "guidance": "Provide the study short title if the sample was collected as part of a study.",
+      "ontology": "NCIT:C42774",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Mother Offspring Malaria Study (MOMS) in Tanzania"
+      ]
+    },
+    "study": {
+      "description": "An uncontrolled observational study containing a detailed report of the diagnosis, treatment, and follow-up of an individual patient. Case reports also contain some demographic information about the patient (for example, age, gender, ethnic origin).",
+      "guidance": "Select a study value from the pick list provided.",
+      "ontology": "NCIT:C63536",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Population study (NCIT:C15716)"
+      ]
+    },
+    "study_start_date": {
+      "description": "The date on which a study began.",
+      "guidance": "Provide the study start date in ISO 8601 format, i.e. \"YYYY-MM-DD\".",
+      "ontology": "NCIT:C69208",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "01/06/2024 00:00"
+      ]
+    },
+    "study_completion_date": {
+      "description": "The date on which a study completes.",
+      "guidance": "Provide the study completing date in ISO 8601 format, i.e. \"YYYY-MM-DD\".",
+      "ontology": "OPMI:0000297",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "30/06/2025 00:00"
+      ]
+    },
+    "study_site_id": {
+      "description": "A sequence of characters used to identify, name, or characterize the study site.",
+      "guidance": "It is a unique identifier for the geographic or institutional location where a study is conducted, e.g., a hospital, clinic, or village where participants are enrolled and the study is implemented.",
+      "ontology": "NCIT_C83081",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "Katuuso village"
+      ]
+    },
+    "population": {
+      "description": "A population is a collection of individuals from the same taxonomic class living, counted or sampled at a particular site or in a particular area.",
+      "guidance": "Record the sample collection targeted population group accuratly in the template. Pick a value from the pick list provided. If the desired value is not available, select \"Other\" from the pick list and add a free text description of the desired targeted population group. If the information is unknown or cannot be provided, leave blank or provide a null value.",
+      "ontology": "IDOMAL:0001254",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "human population in malarial areas [IDOMAL:0001008] (3)"
+      ]
+    },
+    "sampling_area_human_population_measurement_value": {
+      "description": "The numerical value of the human population inhabiting a defined sampling area that contributes to parasite transmission.",
+      "guidance": "Where known, provide the numerical value of population size, i.e. the number of people.",
+      "ontology": "",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        10500
+      ]
+    },
+    "sampling_area_human_population_range": {
+      "description": "The range of the human population inhabiting a defined sampling area that contributes to parasite transmission.",
+      "guidance": "Where the sampling area human population is not well known, provide an estimation of population size by selecting a value from the picklist.",
+      "ontology": "",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "1,000 - 10,000 people"
+      ]
+    },
+    "sampling_area_human_population_density_value": {
+      "description": "The numerical value describing the number of humans per geographical area in a sampling area.",
+      "guidance": "Provide the numerical value of the population density in the sampling area.",
+      "ontology": "",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        4
+      ]
+    },
+    "sampling_area_human_population_density_unit": {
+      "description": "The unit describing the number of humans per geographical area in a sampling area.",
+      "guidance": "Provide the unit of the population density in the sampling area.",
+      "ontology": "",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Persons per Km^2"
+      ]
+    },
+    "study_group_population_size": {
+      "description": "Statistical sample size is a count evaluating the number of individual experimental units.",
+      "guidance": "",
+      "ontology": "STATO:0000088",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        800
+      ]
+    },
+    "screening_population_size": {
+      "description": "Number of individuals that were tested.",
+      "guidance": "",
+      "ontology": "",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        400
+      ]
+    },
+    "population_age_bin": {
+      "description": "A description of the age category of the sample study population at the time of sampling.",
+      "guidance": "Age bins intervals have been provided. Age bin can be used as an alternative for exact age for privacy concerns.",
+      "ontology": "",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "15-49 years"
+      ]
+    },
+    "sex_of_study_group": {
+      "description": "The specific sex, either male, female, or mixed of the subject group being studied.",
+      "guidance": "Pick a value from the pick list provided. Select both male and female values for mixed study group.",
+      "ontology": "NCIT:C49696",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Female [NCIT:C46110]"
+      ]
+    },
+    "infection_status": {
+      "description": "_",
+      "guidance": "Indicates the presence or absence of Plasmodium strain(s) in the hosts at the time of sample collection. This field is used to distinguish between infected and uninfected individuals, where such information is available.",
+      "ontology": "SNOMED:405009004",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Infected population [IDO:0000511]"
+      ]
+    },
+    "infectious_disease_control_strategy": {
+      "description": "A plan specification whose objective specification is an infectious disease control objective specification.",
+      "guidance": "The essential goal of an infectious disease control strategy is to protect the susceptible organisms in a population. Select value(s) from the pick-up list. One or more values can be selected if multiple control strategies are involved.",
+      "ontology": "APOLLO:SV_00000086",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Chemoprophylaxis [IDOMAL:0000122]"
+      ]
+    },
+    "insecticide": {
+      "description": "",
+      "guidance": "Use a standard insecticide name from the pick list provided. Insecticide class, e.g., organophosphates, pyrethroids\u201d, can be used when exact name unknown. One or more values can be selected if multiple insecticides  are involved.",
+      "ontology": "CHEBI:24852",
+      "source_value_type": "Permitted value(s), or Other (Free text)- multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "examples": [
+        "DDT [CHEBI:16130]"
+      ]
+    },
+    "geo_loc_name_country": {
+      "description": "The country of origin of the sample.",
+      "guidance": "Provide the country name from the pick list in the template.",
+      "ontology": "GENEPIO:0001181",
+      "source_value_type": "Permitted value",
+      "type": "string",
+      "examples": [
+        "South Africa [GAZ:00001094]"
+      ]
+    },
+    "first_order_administrative_division": {
+      "description": "A primary administrative division of a country, such as a state in the United States",
+      "guidance": "Provide the name of the primary administrative subdivision (such as a province, state or territory) of the country where the sample originated, using official name from the GAZ (Gazetteer) geography ontology. Search for geography terms here: https://www.ebi.ac.uk/ols/ontologies/gaz",
+      "ontology": "ENVO_00000005",
+      "source_value_type": "Free text (GAZ geography ontology)",
+      "type": "string",
+      "examples": [
+        "Western Cape"
+      ]
+    },
+    "second_order_administrative_division": {
+      "description": "A subdivision of a second-order administrative division",
+      "guidance": "Provide the name of the second-order administrative subdivision (such as a district) of the country where the sample originated, using official name from the GAZ (Gazetteer) geography ontology. Search for geography terms here: https://www.ebi.ac.uk/ols/ontologies/gaz",
+      "ontology": "ENVO_00000006",
+      "source_value_type": "Free text (GAZ geography ontology)",
+      "type": "string",
+      "examples": [
+        "Cape Town"
+      ]
+    },
+    "third_order_administrative_division": {
+      "description": "A subdivision of a third-order administrative division",
+      "guidance": "Provide the name of the third-order administrative subdivision of a country, using official name from the GAZ (Gazetteer) geography ontology.",
+      "ontology": "ENVO_00000007",
+      "source_value_type": "Free text (GAZ geography ontology)",
+      "type": "string",
+      "examples": [
+        "City of Cape Town Metropolitan Municipality"
+      ]
+    },
+    "fourth_order_administrative_division": {
+      "description": "A subdivision of a fourth-order administrative division",
+      "guidance": "Provide the name of the fourth-order administrative subdivision of a country, using official name from the GAZ (Gazetteer) geography ontology. Search for geography terms here: https://www.ebi.ac.uk/ols/ontologies/gaz",
+      "ontology": "ENVO_00000008",
+      "source_value_type": "Free text (GAZ geography ontology)",
+      "type": "string",
+      "examples": [
+        "Mitchells Plain"
+      ]
+    },
+    "sampling_site_id": {
+      "description": "The user-defined identifier assigned to the environmental location from which a specimen or sample is taken.",
+      "guidance": "Store the identifier for the site from which a sample was taken. The \"site\" is user defined .This could be a household, a river bank (for vector sampling), a health facility room, or any other location. Please use the same site ID for all samples from a given site, regardless of when these samples were taken. Any important changes in site location, should be represented with a new site ID. For privacy reasons, consult a data steward before sharing, or ensure the sampling site ID is coded, anonymized, or otherwise protected.",
+      "ontology": "GENEPIO:0100760",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Groote Schuur Hospital (GSH) [DOI: 10.7196/samj.7904]."
+      ]
+    },
+    "geo_loc_latitude": {
+      "description": "The latitude coordinates of the geographical location of sample collection.",
+      "guidance": "Provide latitude coordinates if available and if ethicly acceptable to share. Specify as degrees latitude in format \"d[d.dddd] N|S\".",
+      "ontology": "OBI:0001620",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "38.98 N"
+      ]
+    },
+    "geo_loc_longitude": {
+      "description": "The longitude coordinates of the geographical location of sample collection.",
+      "guidance": "Provide longitude coordinates if available and if ethicly acceptable to share. Specify as degrees longitude in format \"d[dd.dddd] W|E\".",
+      "ontology": "OBI:0001621",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "77.11 W"
+      ]
+    },
+    "populated_area_type": {
+      "description": "A type of area that is populated by humans to different degrees.",
+      "guidance": "Provide the populated area type from the pick list.",
+      "ontology": "GENEPIO:0100778",
+      "source_value_type": "Permitted value(s).",
+      "type": "string",
+      "examples": [
+        "Urban [GSSO:011080]"
+      ]
+    },
+    "proximity_to_vector_breeding_habitat": {
+      "description": "Shortest straight\u2011line (Euclidean) distance from the centre of point of infection (centre of the household) to the nearest identified breeding habitat.",
+      "guidance": "Provide the shortest straight-line distance from the centre of the point of infection to the nearest identified breeding habitat, in metres (m).",
+      "ontology": "",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "examples": [
+        "250 m"
+      ]
+    },
+    "specimen_source_context": {
+      "description": "Describes the physical, environmental, and/or local geographical source of the biological sample from which the sample was derived.",
+      "guidance": "Provide a descriptor of an environmental site. Use the pick list provided in the template. If a desired term is missing from the pick list, use this look-up service to identify a standardized term: https://www.ebi.ac.uk/ols/ontologies/envo. If not applicable, leave blank.",
+      "ontology": "GENEPIO:0000027",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Hospital [ENVO:00002173]"
+      ]
+    },
+    "entomological_inoculation_rate": {
+      "description": "Number of infectious mosquito bites per person per year.",
+      "guidance": "Provide the entomological inoculation rate (EIR) as: X infectious bites/person/time unit (year). Example: 20 infectious bites/person/year.",
+      "ontology": "IDOMAL:0000411",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "examples": [
+        "20 infectious bites/person/year"
+      ]
+    },
+    "parasite_prevalence": {
+      "description": "Percentage of population with malaria parasites.",
+      "guidance": "Provide the percentage of population with malaria parasites, like Plasmodium falciparum parasite rate in children 2\u201310 years (PfPR2-10).  Example: PfPR2-10: 25%.",
+      "ontology": "",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "examples": [
+        "PfPR2-10: 25%."
+      ]
+    },
+    "endemicity": {
+      "description": "The malaria transmission intensity where the sample was collected.",
+      "guidance": "Select a value from the pick list in the template.",
+      "ontology": "",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Moderate/Mesoendemic"
+      ]
+    },
+    "sample_collection_date": {
+      "description": "The date on which the sample was collected.",
+      "guidance": "Record the collection date accurately in the template. Required granularity includes year, month and day. Before sharing this data, ensure this date is not considered identifiable information. If this date is considered identifiable, it is acceptable to add \"jitter\" to the collection date by adding or subtracting calendar days. Do not change the collection date in your original records. Alternatively, \u201dreceived date\u201d may be used as a substitute in the data you share. The date should be provided in ISO 8601 standard format \"YYYY-MM-DD\".",
+      "ontology": "GENEPIO:0001174",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "14/04/2025"
+      ]
+    },
+    "sample_collection_date_precision": {
+      "description": "The precision to which the \"sample collection date\" was provided.",
+      "guidance": "The precision to which the \"sample collection date\" was provided. Provide the precision of granularity to the \"\"day\"\", \"\"month\"\", or \"\"year\"\" for the date provided in the \"\"sample collection date\"\" field. The \"\"sample collection date\"\" will be truncated to the precision specified upon export; \"\"day\"\" for \"\"YYYY-MM-DD\"\",\"&\" \"\"month\"\" for \"\"YYYY-MM\"\", or \"\"year\"\" for \"\"YYYY\"\".",
+      "ontology": "GENEPIO:0001177",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "year [UO:0000036]"
+      ]
+    },
+    "timepoint": {
+      "description": "A specific point in the time continuum, including those established relative to an event.",
+      "guidance": "The timepoint should be recorded in a clear, structured format to reflect when the sample was collected in relation to study events or interventions. Acceptable formats include relative time markers such as Day 0, Day 7, or Day 28, or broader time frames like Week 1, Month 3, or Year 1. The coded timepoint should be  consistent across all samples within the study to support comparability and reliable longitudinal analysis.",
+      "ontology": "NCIT:C68568",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Day 1"
+      ]
+    },
+    "time_point_reference": {
+      "description": "The point in time that acts as a fixed reference point to an event (sample collection timepoint).",
+      "guidance": "Using such time point references helps position sample collection times within the overall study timeline, facilitting consistent comparison and analysis across all samples. A standardized, coded label such as treatment start or end date, after diagnosis date, or other key milestones including pre-treatment or post-treatment, should be used when recording the time point reference.",
+      "ontology": "NCIT:C82576",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "After treatment start date."
+      ]
+    },
+    "sample_received_date": {
+      "description": "The date on which the sample was received for processing.",
+      "guidance": "The date the sample was received by a lab that was not the point of collection. ISO 8601 standard \"YYYY-MM-DD\".",
+      "ontology": "GENEPIO:0001179",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "20/03/2020 00:00"
+      ]
+    },
+    "anatomical_material": {
+      "description": "A substance obtained from an anatomical part of an organism e.g. tissue, blood.",
+      "guidance": "Provide a descriptor if an anatomical material was sampled. Use the pick list provided in the template. If a desired term is missing from the pick list, use this look-up service to identify a standardized term: https://www.ebi.ac.uk/ols/ontologies/uberon. If not applicable, leave blank.",
+      "ontology": "GENEPIO:0001211",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Whole blood [NCIT:C41067]"
+      ]
+    },
+    "anatomical_part": {
+      "description": "An anatomical part of an organism e.g. oropharynx.",
+      "guidance": "Provide a descriptor if an anatomical part was sampled. Use the pick list provided in the template. If a desired term is missing from the pick list, use this look-up service to identify a standardized term: https://www.ebi.ac.uk/ols/ontologies/uberon. If not applicable, leave blank.",
+      "ontology": "GENEPIO:0001214",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Capillary blood [SNOMED:31675002]"
+      ]
+    },
+    "body_product": {
+      "description": "A substance excreted/secreted from an organism e.g. feces, urine, sweat.",
+      "guidance": "Provide a descriptor if a body product was sampled. Use the pick list provided in the template. If a desired term is missing from the pick list, use this look-up service to identify a standardized term: https://www.ebi.ac.uk/ols/ontologies/uberon. If not applicable, leave blank.",
+      "ontology": "GENEPIO:0001216",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Feces [UBERON:0001988]"
+      ]
+    },
+    "collection_method": {
+      "description": "The process used to collect the sample e.g. phlebotomy, necropsy.",
+      "guidance": "Provide a descriptor if a collection method was used for sampling. Use the pick list provided in the template. If a desired term is missing from the pick list, use this look-up service to identify a standardized term: https://www.ebi.ac.uk/ols/ontologies/obi. If not applicable, leave blank.",
+      "ontology": "GENEPIO:0001241",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Finger Prick [GENEPIO:0100036], Swabbing [GENEPIO:0002117]."
+      ]
+    },
+    "collection_protocol": {
+      "description": "The name and version of a particular protocol used for sampling.",
+      "guidance": "Provide the name and version of the protocol used to collect the samples.",
+      "ontology": "GENEPIO:0001243",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Standard Operating Procedures (SOP) for Malaria Blood Specimens collections"
+      ]
+    },
+    "collection_device": {
+      "description": "The instrument or container used to collect the sample e.g. swab.",
+      "guidance": "Provide a descriptor if a collection device was used for sampling. Use the pick list provided in the template. If a desired term is missing from the pick list, use this look-up service to identify a standardized term: https://www.ebi.ac.uk/ols/ontologies/obi. If not applicable, leave blank.",
+      "ontology": "GENEPIO:0001234",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Blood Collection Tube [OBI:0002859]"
+      ]
+    },
+    "performing_laboratory": {
+      "description": "A laboratory providing analyses of samples collected in clinical care or research.",
+      "guidance": "The laboratory that actually performed the test and that is also therefore the source of the data.",
+      "ontology": "NCIT:C64206",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Centre Pasteur du Cameroun \u2013 Central Reference Laboratory"
+      ]
+    },
+    "identified_by": {
+      "description": "Indicates the person or authoritative body who made an identification.",
+      "guidance": "",
+      "ontology": "NCIT:C164229",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Centre Pasteur du Cameroun \u2013 Central Reference Laboratory"
+      ]
+    },
+    "specimen_processing": {
+      "description": "Any processing applied to the sample during or after receiving the sample.",
+      "guidance": "Critical for interpreting data. Select all the applicable processes from the pick list. If parasite was passaged, include information in \"lab host\", \"passage number\", and \"passage method\" fields. If none of the processes in the pick list apply, put \"not applicable\".",
+      "ontology": "GENEPIO:0001253",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Passage process [OBI:0002747]"
+      ]
+    },
+    "lab_host": {
+      "description": "Name and description of the laboratory host used to propagate the source organism or material from which the sample was obtained.",
+      "guidance": "Type of cell line used for propagation. Select a value form the pick list. If not passaged, put \"not applicable\".",
+      "ontology": "GENEPIO:0001255",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Hep G2 cell [DIDEO:00000185]"
+      ]
+    },
+    "passage_number": {
+      "description": "Number of passages.",
+      "guidance": "Provide number of known passages. If not passaged, put \"not applicable\"",
+      "ontology": "GENEPIO:0001261",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        3
+      ]
+    },
+    "passage_method": {
+      "description": "Description of how organism was passaged.",
+      "guidance": "Free text. Provide a short description. If not passaged, put \"not applicable\".",
+      "ontology": "GENEPIO:0001264",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Culture of Plasmodium falciparum blood stages v1.0, WWARN Procedure, 2023. https://www.iddo.org/sites/default/files/publication/2023-09/inv01-culture-of-plasmodium-falciparum-blood-stages.pdf"
+      ]
+    },
+    "specimen_processing_details": {
+      "description": "Detailed information regarding the processing applied to a sample during or after receiving the sample.",
+      "guidance": "Provide a free text description of any processing details applied to a sample.",
+      "ontology": "GENEPIO:0100311",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Blood samples were mixed with a lysis buffer, filtered to remove debris, and the malaria antigen was purified using magnetic beads to enhance the detection sensitivity of rapid diagnostic tests down to very low parsite levels."
+      ]
+    },
+    "experimental_specimen_role_type": {
+      "description": "The type of role that the sample represents in the experiment.",
+      "guidance": "Samples can play different types of roles in experiments. A sample under study in one experiment may act as a control or be a replicate of another sample in another experiment. This field is used to distinguish samples under study from controls, replicates, etc.  If the sample acted as an experimental control or a replicate, select a role type from the picklist. If the sample was not a control, leave blank or select \"Not Applicable\".",
+      "ontology": "GENEPIO:0100921",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Positive experimental control [GENEPIO:0101018]"
+      ]
+    },
+    "experimental_control_details": {
+      "description": "The details regarding the experimental control contained in the sample.",
+      "guidance": "Provide details regarding the nature of the reference strain used as a control, or what is was used to monitor.",
+      "ontology": "GENEPIO:0100922",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Positive control samples consisted of dried Plasmodium falciparum-infected blood collected from a patient with confirmed malaria infection (>200 parasites/\u03bcl). These samples were prepared, dried, and stored using a standardized protocol, then rehydrated with PBS-Tween 20 solution before use. The controls were tested repeatedly on rapid diagnostic test (RDT) kits over several days to validate lot-to-lot consistency and ensure reliable test performance."
+      ]
+    },
+    "diagnostic_procedure_of_malaria": {
+      "description": "A procedure used for the diagnosis of malaria, including the precise pathogen causing the disease.",
+      "guidance": "A procedure used for the diagnosis of malaria, including the precise pathogen causing the disease. Select all diagnostic procedures employed for malaria diagnosis from the pick list provided in the template.",
+      "ontology": "IDOMAL:0000049",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "HRP-2 detection method [IDOMAL:0000220], use of nucleic acid probe [IDOMAL:0000562]"
+      ]
+    },
+    "biomaterial_extracted": {
+      "description": "The biomaterial extracted from samples for the purpose of sequencing.",
+      "guidance": "Provide the biomaterial extracted from the pick list in the template.",
+      "ontology": "GENEPIO:0001266",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "RNA (Total) [OBI:0000895]"
+      ]
+    },
+    "data_abstraction_details": {
+      "description": "A description of how any data elements were altered to preserve patient privacy.",
+      "guidance": "If applicable, provide a description of how each data element was abstracted.",
+      "ontology": "GENEPIO:0100278",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Jitter added to publicly shared collection dates to prevent re-identifiability."
+      ]
+    },
+    "biospecimen_storage": {
+      "description": "The act, process and logistical considerations of the physical or environmental conditions under which the biological sample is maintained. https://www.ebi.ac.uk/ols4/ontologies/ncit/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FNCIT_C179748",
+      "guidance": "",
+      "ontology": "NCIT:C179748",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Blood samples for molecular tests like PCR stored at -20\u00b0C or lower."
+      ]
+    },
+    "biospecimen_processing_date": {
+      "description": "The date that a biospecimen was processed.",
+      "guidance": "Provide the sample processed date in ISO 8601 format, i.e. \"YYYY-MM-DD\". The sample may be collected and processed (e.g. filtered, extraction) on the same day, or on different dates.",
+      "ontology": "NCIT:C178874",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "22/04/2025 00:00"
+      ]
+    },
+    "isolated_by": {
+      "description": "The name of the agency, organization or institution with which the individual who performed the isolation procedure is affiliated.",
+      "guidance": "Provide the name of the agency, organization or institution that isolated the original isolate in full (avoid abbreviations). If the information is unknown or cannot be provided, leave blank or provide a null value.",
+      "ontology": "GENEPIO:0100461",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "NICD Molecular Diagnostics Lab"
+      ]
+    },
+    "isolated_by_laboratory_name": {
+      "description": "The specific laboratory affiliation of the individual who performed the isolation procedure.",
+      "guidance": "Provide the name of the specific laboratory that isolated the original isolate (avoid abbreviations). If the information is unknown or cannot be provided, leave blank or provide a null value.",
+      "ontology": "GENEPIO:0100462",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "National Institute for Communicable Diseases (NICD)"
+      ]
+    },
+    "isolated_by_contact_name": {
+      "description": "The name or title of the contact responsible for follow-up regarding the isolate.",
+      "guidance": "Provide the name of an individual or their job title. As personnel turnover may render the contact's name obsolete, it is prefereable to provide a job title for ensuring accuracy of information and institutional memory. If the information is unknown or cannot be provided, leave blank or provide a null value.",
+      "ontology": "GENEPIO:0100463",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Dr. Givemore Munhenga"
+      ]
+    },
+    "isolated_by_contact_email": {
+      "description": "The email address of the contact responsible for follow-up regarding the isolate.",
+      "guidance": "Provide the email associated with the listed contact. As personnel turnover may render an individual's email obsolete, it is more prefereable to provide an address for a position or lab, to ensure accuracy of information and institutional memory. If the information is unknown or cannot be provided, leave blank or provide a null value.",
+      "ontology": "GENEPIO:0100464",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "givemorem@nicd.ac.za"
+      ]
+    },
+    "isolation_date": {
+      "description": "The date on which the isolate was isolated from a sample.",
+      "guidance": "Provide the date according to the ISO 8601 standard \"YYYY-MM-DD\", \"YYYY-MM\" or \"YYYY\".",
+      "ontology": "GENEPIO:0100465",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "15/07/1905 00:00"
+      ]
+    },
+    "isolate_received_date": {
+      "description": "The date on which the isolate was received by the laboratory.",
+      "guidance": "Provide the date according to the ISO 8601 standard \"YYYY-MM-DD\", \"YYYY-MM\" or \"YYYY\".",
+      "ontology": "GENEPIO:0100466",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "15/07/1905 00:00"
+      ]
+    },
+    "isolate_id": {
+      "description": "The user-defined identifier for the isolate, as provided by the laboratory that originally isolated the isolate.",
+      "guidance": "Provide the isolate_ID created by the lab that first isolated the isolate (i.e. the original isolate ID). If the information is unknown or cannot be provided, leave blank or provide a null value. If only an alternate isolate ID is known (e.g. the ID from your lab, if your lab did not isolate the isolate from the original sample), make sure to include it in the alternative_isolate_ID field.",
+      "ontology": "GENEPIO:0100456",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "NICD-2025-MAL-00123"
+      ]
+    },
+    "alternative_isolate_id": {
+      "description": "An alternative isolate_ID assigned to the isolate by another organization.",
+      "guidance": "Alternative isolate IDs should be provided in a prescribed format which consists of the ID followed by square brackets (no space in between the ID and bracket) containing the short form of ID provider\u2019s agency name i.e. ID[short organization code]. An example of a properly formatted alternative_isolate_identifier would be e.g. XYZ4567[CFIA]. Multiple alternative isolate IDs can be provided, separated by semi-colons.",
+      "ontology": "GENEPIO:0100457",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "PCR-SSU-2025-00123"
+      ]
+    },
+    "progen_isolate_id": {
+      "description": "The identifier assigned to a progenitor isolate derived from an isolate that was directly obtained from a sample.",
+      "guidance": "If your sequence data pertains to progeny of an original isolate, provide the progeny isolate identifier.",
+      "ontology": "GENEPIO:0100458",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "NF54"
+      ]
+    },
+    "organism": {
+      "description": "Taxonomic name of the organism.",
+      "guidance": "Select the \"Plasmodium\" species from the picklist . If another Plasmodium species is being sequenced, provide the taxonomic name from NCBITaxon. Search for taxonomy terms at https://www.ebi.ac.uk/ols/ontologies/ncbitaxon.",
+      "ontology": "GENEPIO:0001191",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Plasmodium falciparum [NCBITaxon:5833]"
+      ]
+    },
+    "parasite_strain": {
+      "description": "A parasite that is bred to have some uniform behavioral, morphological, physiological, or genetic characteristics with similarly bred parasite organisms. A strain of a species. https://www.ebi.ac.uk/ols4/ontologies/ncbitaxon/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FNCBITaxon_strain",
+      "guidance": "If the isolate represents or is derived from, a lab reference strain or strain from a type culture collection, provide the strain identifier.",
+      "ontology": "EUPATH:0000761",
+      "source_value_type": "NCBITaxon:strain",
+      "type": "string",
+      "examples": [
+        "Plasmodium knowlesi strain H (NCBITaxon:5851)"
+      ]
+    },
+    "substrain": {
+      "description": "A further sub-classification of the organism strain.",
+      "guidance": "",
+      "ontology": "NCIT:C117456",
+      "source_value_type": "NCBITaxon",
+      "type": "string",
+      "examples": [
+        "Plasmodium knowlesi A1-H.1 substrain"
+      ]
+    },
+    "genotype": {
+      "description": "A genetic characteristics information that is about the genetic material of an organism and minimally includes information about the genetic background and can in addition contain information about specific alleles, genetic modifications, etc.",
+      "guidance": "Genotype information can be: Mus musculus wild type (in this case the genetic population background information is Mus musculus), C57BL/6J Hnf1a+/- (in this case, C57BL/6J is the genetic population background information and Hnf1a+/- is the allele information.",
+      "ontology": "OBI:0001305",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Plasmodium knowlesi Kelch13 mutation,"
+      ]
+    },
+    "phenotype": {
+      "description": "The assemblage of traits or outward appearance of an individual. It is the product of interactions between genes and the environment.",
+      "guidance": "The observable characteristics in an individual resulting from the expression of genes; the clinical presentation of an individual with a particular genotype.",
+      "ontology": "NCIT:C16977",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Resistance to drug  [IDO:0000445]"
+      ]
+    },
+    "host_taxid": {
+      "description": "NCBI Taxon id of the host, e.g., 9606",
+      "guidance": "",
+      "ontology": "NCBITaxon",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "9606"
+      ]
+    },
+    "host_subject_id": {
+      "description": "A unique identifier by which each host can be referred to.",
+      "guidance": "Should be a unique, user-defined identifier. This ID can help link laboratory data with epidemiological data, however, is likely sensitive information. Consult the data steward. Required if we have multiple samples from the same host, e.g., TES. If only one sample is collected, this is recorded under \"specimen_collector_sample ID\" field, put \"Not Applicable [GENEPIO:0001619]\".",
+      "ontology": "GENEPIO:0001398",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "BCxy123"
+      ]
+    },
+    "host_common_name": {
+      "description": "The commonly used name of the host.",
+      "guidance": "Common name or scientific name are required if there was a host. Common name examples e.g. human, bat. Select a value from the pick list. If the sample was environmental, put \"not applicable\".",
+      "ontology": "GENEPIO:0001386",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Human [NCBITaxon:9606]"
+      ]
+    },
+    "host_scientific_name": {
+      "description": "The taxonomic, or scientific name of the host.",
+      "guidance": "Common name or scientific name are required if there was a host. Scientific name examples e.g. Homo sapiens. Select a value from the pick list. If the sample was environmental, put \"not applicable\".",
+      "ontology": "GENEPIO:0001387",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Homo sapiens [NCBITaxon:9606]"
+      ]
+    },
+    "host_age": {
+      "description": "Age of host at the time of sampling.",
+      "guidance": "If known, provide age. Age-binning is also acceptable.",
+      "ontology": "GENEPIO:0001392",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        79
+      ]
+    },
+    "host_age_unit": {
+      "description": "The units used to measure the host's age.",
+      "guidance": "If known, provide the age units used to measure the host's age from the pick list.",
+      "ontology": "GENEPIO:0001393",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "years [UO:0000036]"
+      ]
+    },
+    "host_age_bin": {
+      "description": "The age category of the host at the time of sampling.",
+      "guidance": "Age bins in 10 year intervals have been provided. If a host's age cannot be specified due to provacy concerns, an age bin can be used as an alternative.",
+      "ontology": "GENEPIO:0001394",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "50 - 59 [GENEPIO:0100054]"
+      ]
+    },
+    "host_sex": {
+      "description": "A subject sex is the phenotypic sex of given subject (human or animal) related to a given investigation, study, and/or specimen.",
+      "guidance": "If known, select a value from the pick list.",
+      "ontology": "GENEPIO:0000031",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Male [NCIT:C46109]"
+      ]
+    },
+    "quality_of_host": {
+      "description": "A quality which refers to the host.",
+      "guidance": "The description of the specific individual from which this sample was obtained. Select a value from the pick list.",
+      "ontology": "IDOMAL:0000346",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "immunodeficiency [IDOMAL:0000024]"
+      ]
+    },
+    "host_health_state": {
+      "description": "Describes the health status of the host at the time of sample collection.",
+      "guidance": "If known, select a value from the pick list.",
+      "ontology": "GENEPIO:0001388",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Asymptomatic [NCIT:C3833]"
+      ]
+    },
+    "host_health_status_details": {
+      "description": "Further details pertaining to the health or disease status of the host at time of collection.",
+      "guidance": "If known, select a value from the pick list.",
+      "ontology": "GENEPIO:0001389",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Hospitalized (ICU) [GENEPIO:0100046]"
+      ]
+    },
+    "host_disease": {
+      "description": "The name of the disease experienced by the host.",
+      "guidance": "This field is only required if there was a host. If the host was a human select the disease  from the pick list. If the host was asymptomatic, this can be recorded under \u201chost health state details\u201d.  If the host is not human, and the disease state is not known or the host appears healthy, put \u201cnot applicable\u201d.",
+      "ontology": "GENEPIO:0001391",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "cerebral malaria [EFO:0006857]"
+      ]
+    },
+    "host_health_outcome": {
+      "description": "Disease outcome in the host.",
+      "guidance": "If known, select a value from the pick list.",
+      "ontology": "GENEPIO:0001390",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Recovered [NCIT:C49498]"
+      ]
+    },
+    "host_residence_geo_loc_name_country": {
+      "description": "The country where the host resides.",
+      "guidance": "If known, select a value from the pick list.",
+      "ontology": "GENEPIO:0001396",
+      "source_value_type": "Permitted value",
+      "type": "string",
+      "examples": [
+        "South Africa [GAZ:00001094]"
+      ]
+    },
+    "symptom_onset_date": {
+      "description": "The date on which the symptoms began or were first noted.",
+      "guidance": "If known, provide the symptom onset date in ISO 8601 standard format \"YYYY-MM-DD\".",
+      "ontology": "GENEPIO:0001399",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "16/03/2020 00:00"
+      ]
+    },
+    "signs_and_symptoms": {
+      "description": "A perceived change in function or sensation, (loss, disturbance or appearance) indicative of a disease, reported by a patient.",
+      "guidance": "Select all of the symptoms experienced by the host from the pick list.",
+      "ontology": "GENEPIO:0001400",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Fever [SYMP:0000613], Headache [SYMP:0000504], Shivering\u00a0[IDOMAL:0000398]."
+      ]
+    },
+    "pre_existing_conditions_and_risk_factors": {
+      "description": "Patient pre-existing conditions and risk factors.\nPre-existing condition: A medical condition that existed prior to the current infection.\nRisk Factor: A variable associated with an increased risk of disease or infection.",
+      "guidance": "Select all of the pre-existing conditions and risk factors experienced by the host from the pick list. If the desired term is missing, contact the curation team.",
+      "ontology": "GENEPIO:0001401",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Asthma [HP:0002099]"
+      ]
+    },
+    "complications": {
+      "description": "Patient medical complications that are believed to have occurred as a result of host disease.",
+      "guidance": "Select all of the complications experienced by the host from the pick list.",
+      "ontology": "GENEPIO:0001402",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Acute respiratory failure [MONDO:0001208]"
+      ]
+    },
+    "general_therapeutic_procedure": {
+      "description": "A general therapeutic procedure applied for malaria.",
+      "guidance": "",
+      "ontology": "IDOMAL:0001283",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "chemotherapy of malaria [IDOMAL:0000050]"
+      ]
+    },
+    "antimalarials": {
+      "description": "Agents used in the treatment of malaria. They are usually classified on the basis of their action against plasmodia at different stages in their life cycle in the human. (From AMA, Drug Evaluations Annual, 1992, p1585).",
+      "guidance": "Select all antimalarial agents used during the therapeutic course from the pick list provided in the template.",
+      "ontology": "mesh:D000962",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Chloroquine [NCIT:C61671]"
+      ]
+    },
+    "host_vaccination_status": {
+      "description": "The vaccination status of the host (fully vaccinated, partially vaccinated, or not vaccinated).",
+      "guidance": "Select the vaccination status of the host from the pick list.",
+      "ontology": "GENEPIO:0001404",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Fully Vaccinated [GENEPIO:0100100]"
+      ]
+    },
+    "vaccine_name": {
+      "description": "The name of the vaccine(s) administered.",
+      "guidance": "Select all vaccine names from the pick list provided in the template. If the vaccine name is missing, select \"Other\" and provide the scientific/research name of the vaccine followed by the name of the manufacturer, separated by a comma. If an individual received doses of different vaccines, provide the information in the order received, separated by a semicolons.",
+      "ontology": "GENEPIO:0001405",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "RTS,S (Mosquirx), GlaxoSmithKline (GSK) and partners"
+      ]
+    },
+    "number_of_vaccine_doses_received": {
+      "description": "The number of doses of the vaccine received by the host.",
+      "guidance": "Record how many doses of the vaccine the host has received.",
+      "ontology": "GENEPIO:0001406",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        2
+      ]
+    },
+    "vaccination_date_dose_1": {
+      "description": "A host data field which describes the date the first dose of a vaccine was administered.",
+      "guidance": "Provide the date that the first dose of the vaccine was administered. Provide the first dose vaccination date in ISO 8601 standard format \"YYYY-MM-DD\".",
+      "ontology": "GENEPIO:0100314",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "26/02/2021 00:00"
+      ]
+    },
+    "vaccination_date_dose_2": {
+      "description": "A host data field which describes the date the second dose of a vaccine was administered.",
+      "guidance": "Provide the date the second dose of malaria vaccine was administered. The date should be provided in ISO 8601 standard format 'YYYY-MM-DD'.",
+      "ontology": "GENEPIO:0100316",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "27/08/2021 00:00"
+      ]
+    },
+    "vaccination_date_dose_3": {
+      "description": "A host data field which describes the date the third dose of a vaccine was administered.",
+      "guidance": "Provide the date the third dose of malaria vaccine was administered. The date should be provided in ISO 8601 standard format 'YYYY-MM-DD'.",
+      "ontology": "GENEPIO:0100318",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "28/02/2022 00:00"
+      ]
+    },
+    "vaccination_date_dose_4": {
+      "description": "A host data field which describes the date the fourth dose of a vaccine was administered.",
+      "guidance": "Provide the date the fourth dose of malaria vaccine was administered. The date should be provided in ISO 8601 standard format 'YYYY-MM-DD'.",
+      "ontology": "GENEPIO:0100320",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "01/08/2022 00:00"
+      ]
+    },
+    "location_of_exposure_geo_loc_name_country": {
+      "description": "The country where the host was likely exposed to the causative agent of the illness.",
+      "guidance": "This location pertains to the country the host was believed to be exposed, and may not be the same as the host's country of residence. If known, provide the country name from the pick list.",
+      "ontology": "GENEPIO:0001410",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "South Africa [GAZ:00001094]"
+      ]
+    },
+    "destination_of_most_recent_travel_city": {
+      "description": "The name of the city that was the destination of most recent travel.",
+      "guidance": "Provide the name of the city that the host travelled to. Use this look-up service to identify the standardized term: https://www.ebi.ac.uk/ols/ontologies/gaz",
+      "ontology": "GENEPIO:0001411",
+      "source_value_type": "Free text (GAZ geography ontology)",
+      "type": "string",
+      "examples": [
+        "New York City [GAZ:00003147]"
+      ]
+    },
+    "destination_of_most_recent_travel_state_province_territory": {
+      "description": "The name of the province that was the destination of most recent travel.",
+      "guidance": "Provide the name of the state/province/territory that the host travelled to. Use this look-up service to identify the standardized term: https://www.ebi.ac.uk/ols/ontologies/gaz",
+      "ontology": "GENEPIO:0001412",
+      "source_value_type": "Free text (GAZ geography ontology)",
+      "type": "string",
+      "examples": [
+        "Limpopo Province [GAZ:00002814]"
+      ]
+    },
+    "destination_of_most_recent_travel_country": {
+      "description": "The name of the country that was the destination of most recent travel.",
+      "guidance": "Provide the name of the country that the host travelled to. Use this look-up service to identify the standardized term: https://www.ebi.ac.uk/ols/ontologies/gaz",
+      "ontology": "GENEPIO:0001413",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "United Kingdom [GAZ:00002637]"
+      ]
+    },
+    "most_recent_travel_departure_date": {
+      "description": "The date of a person's most recent departure from their primary residence (at that time) on a journey to one or more other locations.",
+      "guidance": "Provide the travel departure date in ISO 8601 standard format \"YYYY-MM-DD\".",
+      "ontology": "GENEPIO:0001414",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "16/03/2020 00:00"
+      ]
+    },
+    "most_recent_travel_return_date": {
+      "description": "The date of a person's most recent return to some residence from a journey originating at that residence.",
+      "guidance": "Provide the travel return date in ISO 8601 standard format \"YYYY-MM-DD\".",
+      "ontology": "GENEPIO:0001415",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "26/04/2020 00:00"
+      ]
+    },
+    "travel_history": {
+      "description": "Travel history in last six months.",
+      "guidance": "Specify the countries (and more granular locations if known) travelled in the last six months; can include multiple travels. Separate multiple travel events with a semicolon. Provide as free text.",
+      "ontology": "GENEPIO:0001416",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Canada, Vancouver; USA, Seattle; Italy, Milan."
+      ]
+    },
+    "exposure_duration": {
+      "description": "The period of time from start to finish of an exposure.",
+      "guidance": "Duration for which the subject was exposed to a mosquito-infested environment.",
+      "ontology": "NCIT:C83280",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "7 day"
+      ]
+    },
+    "exposure_event": {
+      "description": "Event leading to exposure.",
+      "guidance": "If known, select the exposure event from the pick list.",
+      "ontology": "GENEPIO:0001417",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Mass Gathering [GENEPIO:0100237]"
+      ]
+    },
+    "exposure_contact_level": {
+      "description": "The exposure transmission contact type.",
+      "guidance": "Select direct or indirect exposure from the pick list.",
+      "ontology": "GENEPIO:0001418",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Mother-to-child transmission [TRANS:0000006]"
+      ]
+    },
+    "host_role": {
+      "description": "The role of the host in relation to the exposure setting.",
+      "guidance": "Select the host's personal role(s) from the pick list provided in the template. If the desired term is missing, contact the curation team.",
+      "ontology": "GENEPIO:0001419",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Patient [OMRSE:00000030]"
+      ]
+    },
+    "exposure_setting": {
+      "description": "The setting leading to exposure.",
+      "guidance": "Select the host exposure setting(s) from the pick list provided in the template. If a desired term is missing, contact the curation team.",
+      "ontology": "GENEPIO:0001428",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Healthcare Setting [GENEPIO:0100201]"
+      ]
+    },
+    "exposure_details": {
+      "description": "Additional host exposure information.",
+      "guidance": "Free text description of the exposure.",
+      "ontology": "GENEPIO:0001431",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Host role - Other: Bus Driver"
+      ]
+    },
+    "prior_infection": {
+      "description": "A data field which describes prior infection information of a host organism.",
+      "guidance": "A data field which describes prior infection information of a host organism. If known, provide infromation about whether the individual had a previous malaria infection. Select a value from the pick list.",
+      "ontology": "GENEPIO:0100638",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Prior infection [GENEPIO:0100234]"
+      ]
+    },
+    "prior_malaria_infection_isolate_id": {
+      "description": "A data field that describes the identifier of the isolate found in the prior malaria infection.",
+      "guidance": "Provide the isolate name of the most recent prior infection.",
+      "ontology": "",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "NICD-2024-MAL-0453"
+      ]
+    },
+    "prior_malaria_infection_parasite": {
+      "description": "A data field that describes the species of Plasmodium responsible for a prior malaria infection.",
+      "guidance": "Select the \"Plasmodium\" species from the picklist . If another Plasmodium species is being sequenced, provide the taxonomic name from NCBITaxon. Search for taxonomy terms at https://www.ebi.ac.uk/ols/ontologies/ncbitaxon.",
+      "ontology": "",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Plasmodium falciparum [NCBITaxon:5833]"
+      ]
+    },
+    "prior_malaria_infection_date": {
+      "description": "The date of diagnosis of the prior malaria infection.",
+      "guidance": "Provide the date that the most recent prior infection was diagnosed. Provide the prior malaria infection date in ISO 8601 standard format \"YYYY-MM-DD\".",
+      "ontology": "",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "22/01/2021 00:00"
+      ]
+    },
+    "prior_antimalarial_treatment": {
+      "description": "A data field that describes whether there was prior antimalarial treatment with an antimalarial agent.",
+      "guidance": "If known, provide infromation about whether the individual had a previous antimalarial treatment. Select a value from the pick list.",
+      "ontology": "",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Prior antimalarial treatment [x]"
+      ]
+    },
+    "prior_antibiotic_treatment_during_prior_malaria_infection": {
+      "description": "A data field which describes the antibiotic treatment for any infection during the prior malaria infection period.",
+      "guidance": "Provide a description of any antibiotic treatment administered (not including malaria treatment) during the prior malaria  infection period. This field is meant to capture concurrent treatment information.",
+      "ontology": "",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "AZT was administered for HIV infection during the prior malaria infection."
+      ]
+    },
+    "prior_antimalarial_agent": {
+      "description": "A data field which describes the name of the antimalarial agent administered during the prior malarial infection.",
+      "guidance": "Provide the name of the antimalarial agent administered during the most recent prior infection. If no treatment was administered, put \"No treatment\". If multiple antiviral agents were administered, list them all separated by commas.",
+      "ontology": "",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Chloroquine [NCIT:C61671]"
+      ]
+    },
+    "prior_antimalarial_treatment_date": {
+      "description": "A data field which describeds the date treatment was first administered during the prior malaria infection.",
+      "guidance": "Provide the date that the antimalarial agent was first administered during the most recenrt prior infection. Provide the prior antimalarial treatment date in ISO 8601 standard format \"YYYY-MM-DD\".",
+      "ontology": "",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "28/01/2021 00:00"
+      ]
+    },
+    "sequencing_project_name": {
+      "description": "The name of the project/initiative/program for which sequencing was performed.",
+      "guidance": "",
+      "ontology": "GENEPIO:0100472",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Pf8 Genomic Surveillance Project"
+      ]
+    },
+    "sequenced_by": {
+      "description": "A data field which describes the name of the agency, organization or institution responsible for sequencing the isolate's genome.",
+      "guidance": "The name of the agency should be written out in full, (with minor exceptions) and be consistent across multiple submissions. If submitting specimens rather than sequencing data, please put the National Microbiology Laboratory (NML).",
+      "ontology": "GENEPIO:0100416",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "West African Centre for Cell Biology of Infectious Pathogens, Accra, Ghana"
+      ]
+    },
+    "sequenced_by_laboratory_name": {
+      "description": "The specific laboratory affiliation of the responsible for sequencing the isolate's genome.",
+      "guidance": "Provide the name of the specific laboratory that performed the sequencing in full (avoid abbreviations). If the information is unknown or cannot be provided, leave blank or provide a null value.",
+      "ontology": "GENEPIO:0100470",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "West African Centre for Cell Biology of Infectious Pathogens (WACCBIP) Sequencing Lab, Ghana"
+      ]
+    },
+    "sequenced_by_contact_name": {
+      "description": "The name or title of the contact responsible for follow-up regarding the sequence.",
+      "guidance": "Provide the name of an individual or their job title. As personnel turnover may render the contact's name obsolete, it is more prefereable to provide a job title for ensuring accuracy of information and institutional memory. If the information is unknown or cannot be provided, leave blank or provide a null value.",
+      "ontology": "GENEPIO:0100471",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Dr. Collins Baraka"
+      ]
+    },
+    "sequenced_by_contact_email": {
+      "description": "The email address of the contact responsible for follow-up regarding the sequence.",
+      "guidance": "The email address can represent a specific individual or lab e.g. johnnyblogs@lab.ca, or RespLab@lab.ca",
+      "ontology": "GENEPIO:0100422",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "afrgocom@who.int"
+      ]
+    },
+    "sequenced_by_contact_address": {
+      "description": "The mailing address of the agency submitting the sequence.",
+      "guidance": "The mailing address should be in the format: Street number and name, City, State/Province/Region, Postal Code/Zip Code, Country.",
+      "ontology": "GENEPIO:0100423",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "examples": [
+        "Cit\u00e9 du Djou\u00e9, Brazzaville, P.O.Box 06, Republic of Congo"
+      ]
+    },
+    "sequence_submitted_by": {
+      "description": "A data field which describes the name of the agency that submitted the sequence to a database.",
+      "guidance": "The name of the agency should be written out in full, (with minor exceptions) and be consistent across multiple submissions.",
+      "ontology": "GENEPIO:0001159",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "NICD Johannesburg Genomic Surveillance Team"
+      ]
+    },
+    "sequence_submitter_contact_email": {
+      "description": "The email address of the contact responsible for follow-up regarding the sequence.",
+      "guidance": "The email address can represent a specific individual or laboratory.",
+      "ontology": "GENEPIO:0001165",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "afrgocom@who.int"
+      ]
+    },
+    "sequence_submitter_contact_address": {
+      "description": "The mailing address of the agency submitting the sequence.",
+      "guidance": "The mailing address should be in the format: Street number and name, City, State/Province/Region, Postal Code/Zip Code, Country.",
+      "ontology": "GENEPIO:0001167",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "examples": [
+        "Cit\u00e9 du Djou\u00e9, Brazzaville, P.O.Box 06, Republic of Congo"
+      ]
+    },
+    "purpose_of_sequencing": {
+      "description": "The reason that the sample was sequenced.",
+      "guidance": "The reason why a sample was originally collected may differ from the reason why it was selected for sequencing. The reason a sample was sequenced may provide information about potential biases in sequencing strategy. Provide the purpose of sequencing from the picklist in the template. The reason for sample collection should be indicated in the \"purpose of sampling\" field.",
+      "ontology": "GENEPIO:0001445",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Baseline surveillance (random sampling) [GENEPIO:0100005]"
+      ]
+    },
+    "purpose_of_sequencing_details": {
+      "description": "The description of why the sample was sequenced providing specific details.",
+      "guidance": "Provide an expanded description of why the sample was sequenced. The description may include the importance of the sequences for a particular public health investigation/surveillance activity/research question.",
+      "ontology": "GENEPIO:0001446",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Genomic surveillance to track antimalarial drug resistance markers and monitor parasite evolution and spread in populations."
+      ]
+    },
+    "nucleic_acid_extraction_method": {
+      "description": "Any procedure used to purify nucleic acids (DNA or RNA) from a biological sample.",
+      "guidance": "Briefly describe the extraction method used.",
+      "ontology": "NCIT:C177560",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Isotachophoresis (ITP)"
+      ]
+    },
+    "nucleic_acid_extraction_kit": {
+      "description": "A data field which describes the kit used to extract genomic material from a sample",
+      "guidance": "Provide the name of the genomic extraction kit used.",
+      "ontology": "GENEPIO:0100772",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Qiagen QIAamp DNA Blood Mini Kit"
+      ]
+    },
+    "nucleic_acid_extraction_date": {
+      "description": "A time measurement datum that specifies when some material was extracted from an input material.",
+      "guidance": "Provide the date in ISO 8601 standard format \"YYYY-MM-DD\".",
+      "ontology": "",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "15/02/2026 00:00"
+      ]
+    },
+    "nucleic_acid_quality_control": {
+      "description": "Describe any step taken to ensure quality control.",
+      "guidance": "",
+      "ontology": "",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "gel electrophoresis, nanodrop, qubit fluorometer, tapestation."
+      ]
+    },
+    "genomic_target_enrichment_method": {
+      "description": "The molecular technique used to selectively capture and amplify specific regions of interest from a genome.",
+      "guidance": "Provide the name of the enrichment method",
+      "ontology": "GENEPIO:0100966",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "hybrid selection method  [GENEPIO:0001950]"
+      ]
+    },
+    "genomic_target_enrichment_method_details": {
+      "description": "Details that provide additional context to the molecular technique used to selectively capture and amplify specific regions of interest from a genome.",
+      "guidance": "Provide details that are applicable to the method you used.",
+      "ontology": "GENEPIO:0100967",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Enrichment was done using Illumina Target Enrichment methodology with the Illumina DNA Prep with enrichment kit."
+      ]
+    },
+    "amplicon_pcr_primer_scheme": {
+      "description": "The specifications of the primers (primer sequences, binding positions, fragment size generated, etc) used to generate the amplicons to be sequenced.",
+      "guidance": "Provide the name and version of the primer scheme used to generate the amplicons for sequencing.",
+      "ontology": "GENEPIO:0001456",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "MalariaGEN amplicon toolkit"
+      ]
+    },
+    "amplicon_size": {
+      "description": "The length of the amplicon generated by PCR amplification.",
+      "guidance": "The length of the amplicon generated by PCR amplification. Provide the amplicon size, including the units.",
+      "ontology": "GENEPIO:0001449",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "300bp"
+      ]
+    },
+    "library_id": {
+      "description": "The user-specified identifier for the library prepared for sequencing.",
+      "guidance": "The library name should be unique, and can be an autogenerated ID from your LIMS, or modification of the isolate ID.",
+      "ontology": "GENEPIO:0001448",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "XYZ_123345"
+      ]
+    },
+    "dna_fragment_length": {
+      "description": "The length of the DNA fragment generated by mechanical shearing or enzymatic digestion for the purposes of library preparation.",
+      "guidance": "The length of the DNA fragment generated by mechanical shearing or enzymatic digestion for the purposes of library preparation. Provide the fragment length in base pairs (do not include the units).",
+      "ontology": "GENEPIO:0100843",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        400
+      ]
+    },
+    "library_preparation_kit": {
+      "description": "The name of the DNA library preparation kit used to generate the library being sequenced.",
+      "guidance": "The name of the DNA library preparation kit used to generate the library being sequenced. Provide the name of the library preparation kit used.",
+      "ontology": "GENEPIO:0001450",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Nextera XT"
+      ]
+    },
+    "flow_cell_barcode": {
+      "description": "The barcode of the flow cell used for sequencing.",
+      "guidance": "Provide the barcode of the flow cell used for sequencing the sample.",
+      "ontology": "GENEPIO:0001451",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "FAB06069"
+      ]
+    },
+    "sequencing_assay_type": {
+      "description": "The overarching sequencing methodology that was used to determine the sequence of a biomaterial.",
+      "guidance": "Example Guidance: Provide the name of the DNA or RNA sequencing technology used in your study. If unsure refer to the protocol documentation, or provide a null value.",
+      "ontology": "GENEPIO:0100997",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "whole genome sequencing assay [OBI:0002117]"
+      ]
+    },
+    "sequencing_instrument": {
+      "description": "The model of the sequencing instrument used.",
+      "guidance": "Select the sequencing instrument from the pick list.",
+      "ontology": "GENEPIO:0001452",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Oxford Nanopore MinION [GENEPIO:0100142]"
+      ]
+    },
+    "sequencing_protocol_name": {
+      "description": "The name and version number of the sequencing protocol used.",
+      "guidance": "Provide the name and version of the sequencing protocol.",
+      "ontology": "GENEPIO:0001453",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "1D_DNA_MinION, ARTIC Network Protocol V3"
+      ]
+    },
+    "sequencing_protocol": {
+      "description": "The protocol used to generate the sequence.",
+      "guidance": "Provide a free text description of the methods and materials used to generate the sequence. Suggested text, fill in information where indicated.: \"Parasite sequencing was performed following a tiling amplicon strategy using the <fill in> primer scheme. Sequencing was performed using a <fill in> sequencing instrument. Libraries were prepared using <fill in> library kit. \"",
+      "ontology": "GENEPIO:0001454",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Targeted amplicon deep sequencing (TADS) like the MaRS protocol deployed by CDC: involves PCR enrichment of drug resistance genes followed by Illumina MiSeq sequencing, data analysis, and SNP detection. This protocol was validated to monitor molecular markers in malaria parasites."
+      ]
+    },
+    "sequencing_flow_cell_version": {
+      "description": "The version number of the flow cell used for generating sequence data.",
+      "guidance": "Flow cells can vary in terms of design, chemistry, capacity, etc. The version of the flow cell used to generate sequence data can affect sequence quantity and quality. Record the version of the flow cell used to generate sequence data. Do not include \"version\" or \"v\" in the version number.",
+      "ontology": "GENEPIO:0101102",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "R.9.4.1"
+      ]
+    },
+    "sequencing_kit_number": {
+      "description": "The manufacturer's kit number.",
+      "guidance": "Alphanumeric value.",
+      "ontology": "GENEPIO:0001455",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "SQK-LSK114"
+      ]
+    },
+    "sequencing_date": {
+      "description": "The date the sample was sequenced.",
+      "guidance": "Provide the date in ISO 8601 standard format \"YYYY-MM-DD\".",
+      "ontology": "GENEPIO:0001447",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "23/11/2025 00:00"
+      ]
+    },
+    "quality_control_method_name": {
+      "description": "The name of the method used to assess whether a sequence passed a predetermined quality control threshold.",
+      "guidance": "Providing the name of the method used for quality control is very important for interpreting the rest of the QC information. Method names can be provided as the name of a pipeline or a link to a GitHub repository. Multiple methods should be listed and separated by a semi-colon. Do not include QC tags in other fields if no method name is provided.",
+      "ontology": "GENEPIO:0100557",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Malaria-Profiler"
+      ]
+    },
+    "quality_control_method_version": {
+      "description": "The version number of the method used to assess whether a sequence passed a predetermined quality control threshold.",
+      "guidance": "Methods updates can make big differences to their outputs. Provide the version of the method used for quality control. The version can be expressed using whatever convention the developer implements (e.g. date, semantic versioning). If multiple methods were used, record the version numbers in the same order as the method names. Separate the version numbers using a semi-colon.",
+      "ontology": "GENEPIO:0100558",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "1.4.3"
+      ]
+    },
+    "quality_control_determination": {
+      "description": "A data field which describes the determination of a quality control assessment.",
+      "guidance": "",
+      "ontology": "GENEPIO:0100559",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "sequence failed quality control [GENEPIO:0100564]"
+      ]
+    },
+    "quality_control_issues": {
+      "description": "A data field which describes the reason contributing to, or causing, a low quality determination in a quality control assessment.",
+      "guidance": "",
+      "ontology": "GENEPIO:0100560",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "low average genome coverage [GENEPIO:0100570]"
+      ]
+    },
+    "quality_control_details": {
+      "description": "The details surrounding a low quality determination in a quality control assessment.",
+      "guidance": "Provide notes or details regarding QC results using free text.",
+      "ontology": "GENEPIO:0100561",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "CT value of 39. Low parasite load. Low DNA concentration after amplification."
+      ]
+    },
+    "raw_sequence_data_processing_method": {
+      "description": "The method used for raw data processing such as removing barcodes, adapter trimming, filtering etc.",
+      "guidance": "Provide the name and version numbers of the software used to process the raw data.",
+      "ontology": "GENEPIO:0001458",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "Porechop 0.2.3"
+      ]
+    },
+    "dehosting_method": {
+      "description": "The method used to remove host reads from the pathogen sequence.",
+      "guidance": "Provide the name and version number of the software used to remove host reads.",
+      "ontology": "GENEPIO:0001459",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Nanostripper"
+      ]
+    },
+    "deduplication_method": {
+      "description": "The method used to remove duplicated reads in a sequence read dataset.",
+      "guidance": "Provide the deduplication software name followed by the version, or a link to a tool or method.",
+      "ontology": "GENEPIO:0100831",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "DeDup 0.12.8"
+      ]
+    },
+    "consensus_sequence_name": {
+      "description": "The name of the consensus sequence.",
+      "guidance": "Provide the name and version number of the consensus sequence.",
+      "ontology": "GENEPIO:0001460",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "ncov123assembly3"
+      ]
+    },
+    "consensus_sequence_filename": {
+      "description": "The name of the consensus sequence file.",
+      "guidance": "Provide the name and version number of the consensus sequence FASTA file.",
+      "ontology": "GENEPIO:0001461",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "ncov123assembly.fasta"
+      ]
+    },
+    "consensus_sequence_filepath": {
+      "description": "The filepath of the consesnsus sequence file.",
+      "guidance": "Provide the filepath of the consensus sequence FASTA file.",
+      "ontology": "GENEPIO:0001462",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "/User/Documents/RespLab/Data/ncov123assembly.fasta"
+      ]
+    },
+    "genome_sequence_file_name": {
+      "description": "The name of the consensus sequence file.",
+      "guidance": "Provide the name and version number, with the file extension, of the processed genome sequence file e.g. a consensus sequence FASTA file or a genome assembly file.",
+      "ontology": "GENEPIO:0101715",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "malariapassembly.fasta"
+      ]
+    },
+    "genome_sequence_file_path": {
+      "description": "The filepath of the consensus sequence file.",
+      "guidance": "Provide the filepath of the genome sequence FASTA file.",
+      "ontology": "GENEPIO:0101716",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "/User/Documents/ViralLab/Data/malariapassembly.fasta"
+      ]
+    },
+    "consensus_sequence_software_name": {
+      "description": "The name of software used to generate the consensus sequence.",
+      "guidance": "Provide the name of the software used to generate the consensus sequence.",
+      "ontology": "GENEPIO:0001463",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Ivar"
+      ]
+    },
+    "consensus_sequence_software_version": {
+      "description": "The version of the software used to generate the consensus sequence.",
+      "guidance": "Provide the version of the software used to generate the consensus sequence.",
+      "ontology": "GENEPIO:0001469",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "1.3"
+      ]
+    },
+    "sequence_assembly_software_name": {
+      "description": "The name of the software used to assemble a sequence.",
+      "guidance": "Provide the name of the software used to assemble the sequence.",
+      "ontology": "GENEPIO:0100825",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "SPAdes Genome Assembler, Canu, wtdbg2, velvet"
+      ]
+    },
+    "sequence_assembly_software_version": {
+      "description": "The version of the software used to assemble a sequence.",
+      "guidance": "Provide the version of the software used to assemble the sequence.",
+      "ontology": "GENEPIO:0100826",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "3.15.5"
+      ]
+    },
+    "r1_fastq_filename": {
+      "description": "The user-specified filename of the r1 FASTQ file.",
+      "guidance": "Provide the r1 FASTQ filename.",
+      "ontology": "GENEPIO:0001476",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "ABC123_S1_L001_R1_001.fastq.gz"
+      ]
+    },
+    "r2_fastq_filename": {
+      "description": "The user-specified filename of the r2 FASTQ file.",
+      "guidance": "Provide the r2 FASTQ filename.",
+      "ontology": "GENEPIO:0001477",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "ABC123_S1_L001_R2_001.fastq.gz"
+      ]
+    },
+    "r1_fastq_filepath": {
+      "description": "The filepath of the r1 FASTQ file.",
+      "guidance": "Provide the filepath of the r1 FASTQ file.",
+      "ontology": "GENEPIO:0001478",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "/User/Documents/RespLab/Data/ABC123_S1_L001_R1_001.fastq.gz"
+      ]
+    },
+    "r2_fastq_filepath": {
+      "description": "The filepath of the r2 FASTQ file.",
+      "guidance": "Provide the filepath of the r2 FASTQ file.",
+      "ontology": "GENEPIO:0001479",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "/User/Documents/RespLab/Data/ABC123_S1_L001_R2_001.fastq.gz"
+      ]
+    },
+    "fast5_filename": {
+      "description": "The user-specified filename of the FAST5 file.",
+      "guidance": "Provide the FAST5 filename.",
+      "ontology": "GENEPIO:0001480",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "batch1a_sequences.fast5"
+      ]
+    },
+    "fast5_filepath": {
+      "description": "The filepath of the FAST5 file.",
+      "guidance": "Provide the filepath of the FAST5 file.",
+      "ontology": "GENEPIO:0001481",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "/User/Documents/RespLab/Data/rona123assembly.fast5"
+      ]
+    },
+    "number_of_total_reads": {
+      "description": "The total number of non-unique reads generated by the sequencing process.",
+      "guidance": "Provide a numerical value (no need to include units).",
+      "ontology": "GENEPIO:0100827",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        423867
+      ]
+    },
+    "number_of_unique_reads": {
+      "description": "The number of unique reads generated by the sequencing process.",
+      "guidance": "Provide a numerical value (no need to include units).",
+      "ontology": "GENEPIO:0100828",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        248236
+      ]
+    },
+    "minimum_post_trimming_read_length": {
+      "description": "The threshold used as a cut-off for the minimum length of a read after trimming.",
+      "guidance": "Provide a numerical value (no need to include units).",
+      "ontology": "GENEPIO:0100829",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        150
+      ]
+    },
+    "breadth_of_coverage_value": {
+      "description": "The percentage of the reference genome covered by the sequenced data, to a prescribed depth.",
+      "guidance": "Provide value as a percent.",
+      "ontology": "GENEPIO:0001472",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "0.95"
+      ]
+    },
+    "depth_of_coverage_value": {
+      "description": "The average number of reads representing a given nucleotide in the reconstructed sequence.",
+      "guidance": "Provide value as a fold of coverage.",
+      "ontology": "GENEPIO:0001474",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "400x"
+      ]
+    },
+    "depth_of_coverage_threshold": {
+      "description": "The threshold used as a cut-off for the depth of coverage.",
+      "guidance": "Provide the threshold fold coverage.",
+      "ontology": "GENEPIO:0001475",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "100x"
+      ]
+    },
+    "number_of_base_pairs_sequenced": {
+      "description": "The number of total base pairs generated by the sequencing process.",
+      "guidance": "Provide a numerical value (no need to include units).",
+      "ontology": "GENEPIO:0001482",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        387566
+      ]
+    },
+    "consensus_genome_length": {
+      "description": "Size of the assembled genome described as the number of base pairs.",
+      "guidance": "Provide a numerical value (no need to include units).",
+      "ontology": "GENEPIO:0001483",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        38677
+      ]
+    },
+    "sequence_assembly_length": {
+      "description": "The length of the genome generated by assembling reads using a scaffold or by reference-based mapping.",
+      "guidance": "Provide a numerical value (no need to include units).",
+      "ontology": "GENEPIO:0100846",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        34272
+      ]
+    },
+    "number_of_contigs": {
+      "description": "The number of contigs (contiguous sequences) in a sequence assembly.",
+      "guidance": "Provide a numerical value.",
+      "ontology": "GENEPIO:0100937",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        10
+      ]
+    },
+    "genome_completeness": {
+      "description": "The percentage of expected genes identified in the genome being sequenced. Missing genes indicate missing genomic regions (incompleteness) in the data.",
+      "guidance": "Provide the genome completeness as a percent (no need to include units).",
+      "ontology": "GENEPIO:0100844",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        85
+      ]
+    },
+    "n50": {
+      "description": "The length of the shortest read that, together with other reads, represents at least 50% of the nucleotides in a set of sequences.",
+      "guidance": "Provide the N50 value in Mb.",
+      "ontology": "GENEPIO:0100938",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        150
+      ]
+    },
+    "percent_ns_across_total_genome_length": {
+      "description": "The percentage of the assembly that consists of ambiguous bases (Ns).",
+      "guidance": "Provide a numerical value (no need to include units).",
+      "ontology": "GENEPIO:0100830",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        2
+      ]
+    },
+    "ns_per_100_kbp": {
+      "description": "The number of N symbols present in the consensus fasta sequence, per 100kbp of sequence.",
+      "guidance": "The number of N symbols present in the consensus fasta sequence, per 100kbp of sequence. Provide a numerical value (no need to include units).",
+      "ontology": "GENEPIO:0001484",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        300
+      ]
+    },
+    "reference_genome_accession": {
+      "description": "A persistent, unique identifier of a genome database entry.",
+      "guidance": "Provide the accession number of the reference genome.",
+      "ontology": "GENEPIO:0001485",
+      "source_value_type": "Alphanumeric",
+      "type": "string",
+      "examples": [
+        "Plasmodium falciparum 3D7 (Pf3D7) [NCBITaxon:36329]"
+      ]
+    },
+    "bioinformatics_protocol": {
+      "description": "The name and version number of the bioinformatics protocol used.",
+      "guidance": "Further details regarding the methods used to process raw data, and/or generate assemblies, and/or generate consensus sequences can be provided in an SOP or protocol. Provide the name and version number of the protocol, or a link if deposited in a protocol repository.",
+      "ontology": "GENEPIO:0001489",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5913988/"
+      ]
+    },
+    "read_mapping_software_name": {
+      "description": "The name of the software used to map sequence reads to a reference genome or set of reference genes.",
+      "guidance": "Provide the name of the read mapping software.",
+      "ontology": "GENEPIO:0100832",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Bowtie2, BWA-MEM, Kraken2"
+      ]
+    },
+    "read_mapping_software_version": {
+      "description": "The version of the software used to map sequence reads to a reference genome or set of reference genes.",
+      "guidance": "Provide the version number of the read mapping software.",
+      "ontology": "GENEPIO:0100833",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "0.7.17, 2.1.3"
+      ]
+    },
+    "taxonomic_reference_database_name": {
+      "description": "The name of the taxonomic reference database used to identify the organism.",
+      "guidance": "Provide the name of the taxonomic reference database.",
+      "ontology": "GENEPIO:0100834",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "PlasmoDB"
+      ]
+    },
+    "taxonomic_reference_database_version": {
+      "description": "The version of the taxonomic reference database used to identify the organism.",
+      "guidance": "Provide the version number of the taxonomic reference database.",
+      "ontology": "GENEPIO:0100835",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "52 (2024 release)"
+      ]
+    },
+    "read_mapping_criteria": {
+      "description": "A description of the criteria used to map reads to a reference sequence.",
+      "guidance": "Provide a description of the read mapping criteria or parameter.",
+      "ontology": "GENEPIO:0100836",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Phred score cutoff of \u2265 40"
+      ]
+    },
+    "variant_caller_software_name": {
+      "description": "The name of the software used to call the variant(s).",
+      "guidance": "Provide the name of the variant caller software.",
+      "ontology": "",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "GATK HaplotypeCaller"
+      ]
+    },
+    "variant_caller_software_version": {
+      "description": "The version of the software used to call the variant(s).",
+      "guidance": "Provide the version number of thevariant caller software.",
+      "ontology": "",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "4.1.6.0"
+      ]
+    },
+    "taxonomic_identification_process_details": {
+      "description": "A data field which describes the details of the process used to determine the taxonomic identification of an organism.",
+      "guidance": "Example Guidance: Briefly describe the taxonomic identififcation method details using free text.",
+      "ontology": "GENEPIO:0100584",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Kraken2 (v.2.1.3) was used for taxonomic identification. HaplotypeCaller (GATK v4.1.6.0) was used for variant calling."
+      ]
+    },
+    "variant_caller_report_filename": {
+      "description": "The filename of the report containing the results of a variant calling analysis.",
+      "guidance": "Provide the filename of the report containing the results of the variant calling analysis.",
+      "ontology": "",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "?"
+      ]
+    },
+    "taxonomic_analysis_report_filename": {
+      "description": "The filename of the report containing the results of a taxonomic analysis.",
+      "guidance": "Provide the filename of the report containing the results of the taxonomic analysis.",
+      "ontology": "GENEPIO:0101074",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Pfalciparum_taxonomic_report_2025-09-01.json"
+      ]
+    },
+    "taxonomic_analysis_date": {
+      "description": "A data field which describes the date a taxonomic analysis was performed.",
+      "guidance": "Providing the date that an analyis was performed can help provide context for tool and reference database versions. Provide the date that the taxonomic analysis was performed in ISO 8601 format, i.e. 'YYYY-MM-DD'.",
+      "ontology": "GENEPIO:0101075",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "22/09/2025 00:00"
+      ]
+    },
+    "variant_calling_date": {
+      "description": "The date a variant calling analysis was performed.",
+      "guidance": "Providing the date that an analyis was performed can help provide context for tool and reference database versions. Provide the date that the variant calling analysis was performed in ISO 8601 format, i.e. \"YYYY-MM-DD\".",
+      "ontology": "",
+      "source_value_type": "Structured format",
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "22/09/2025 00:00"
+      ]
+    },
+    "multiplicity_of_infection": {
+      "description": "A ratio unit which denotes the quantity of infectious agents to infection targets.",
+      "guidance": "In cases of polyclonal infection, report the number of detected Plasmodium strains.",
+      "ontology": "UO:0010075",
+      "source_value_type": "Numeric",
+      "type": "integer",
+      "examples": [
+        2
+      ]
+    },
+    "within_host_diversity_fws": {
+      "description": "Characterisation of within-host diversity (FWS).",
+      "guidance": "FWS measures the genetic complexity and diversity of malaria infections within a host relative to the local population, informing on parasite diversity, transmission, and epidemiology. FWS is an index expressed as a value between 0 and 1.",
+      "ontology": "",
+      "source_value_type": "Numeric",
+      "type": "number",
+      "examples": [
+        0.998792137
+      ]
+    },
+    "recurrence_type": {
+      "description": "Similarity in the patterns of polymorphic markers, e.g., msp1/2 or microsatelites, before and after treatment.",
+      "guidance": "Report whether a repeated episode of infection after treatment is a new infection (reinfection) or a return of the original infection (recrudescence).",
+      "ontology": "",
+      "source_value_type": "Permitted value",
+      "type": "string",
+      "examples": [
+        "Reinfection"
+      ]
+    },
+    "gene_name": {
+      "description": "A sequence data which is the name of a gene (typically) assigned by a person and/or according to a naming scheme.",
+      "guidance": "A sequence data which is the name of a gene (typically) assigned by a person and/or according to a naming scheme. Report a gene name where the resistance-associated marker is found. Select standard gene names from the pick list.  If a desired gene name is not available in the pick list, select \"Other\" and enter a standard gene name manually.",
+      "ontology": "GENEPIO:0100599",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Kelch 13 Propeller Domain Protein (pfkelch13)"
+      ]
+    },
+    "gene_symbol": {
+      "description": "A sequence data which is the short name of a gene typically derived from the gene name.",
+      "guidance": "A sequence data which is the short name of a gene typically derived from the gene name. Use standard gene symbols from the pick list. If a desired gene symbol is not available in the pick list, select \"Other\" and enter a standard gene symbol manually.",
+      "ontology": "GENEPIO:0100598",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "k13"
+      ]
+    },
+    "gene_alteration": {
+      "description": "A genetic characteristics information that is about known changes or the lack thereof from the genetic background, including allele information, duplication, insertion, and deletion.",
+      "guidance": "Select one or more gene alterations associated with resistance from the provided pick list. Gene alterations and their resulting drug resistance classification are sourced from the WHO Compendium of Molecular Markers for Antimalarial Drug Resistance (https://www.who.int/tools/compendium-of-molecular-markers-for-antimalarial-drug-resistance). If a desired alteration is not available in the pick list, select \"Other\" and enter the alteration term(s) manually. Multiple alterations are formatted following the conventions in the WHO Compendium:\n1 - Multiple alterations within a single gene\nAlterations use standard amino-acid substitution notation, separated by a plus sign (+).\nExample: crt C72S + K76T + A220S + N326D + I356L\n2 - Alterations in multiple genes\nGene symbols are listed, separated by an ampersand (&), followed by their corresponding alterations. \nExample: dhfr & dhps N51I + C59R + S108N & A437G + A581G\n3 - Wild\u2011type codons\nWild-type (reference) codons included in the genotype are grouped in parentheses.\nExample: crt (C72C + V73V) + M74I + N75E + K76T\n                  crt C72S + (V73V + M74M + N75N) + K76T",
+      "ontology": "OBI:0001364",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "crt K76T"
+      ]
+    },
+    "haplotype": {
+      "description": "A set of discrete, genetically-linked sequence alterations that reside on the same chromosomal strand and are typically co-inherited within a haplotype block.",
+      "guidance": "Select a haplotype term from the provided pick list. Haplotypes and their resulting drug resistance classification are sourced from the WHO Compendium of Molecular Markers for Antimalarial Drug Resistance (https://www.who.int/tools/compendium-of-molecular-markers-for-antimalarial-drug-resistance). If the desired haplotype is not available, select \"Other\" and enter the haplotype manually. Haplotypes are formatted following the conventions in the WHO Compendium: \ngene symbol (codon positions separated by \u201c-\u201d) followed by the amino-acid haplotype representing substitutions at those codon positions. The haplotype letters correspond to the amino acids present at the specified codon positions. \nE.g., dhfr (N51-C59-S108-I164) IRNI; dhps (S436-A437-K540-A581-A613) SGKAA; crt (K76) T; or mdr1 (N86-Y184-D1246) YFD.",
+      "ontology": "GENO:0000871",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "dhps (I431-S436-A437-K540-A581-A613) IAAKAA"
+      ]
+    },
+    "genotype_classification": {
+      "description": "Marker category based on the type(s) of evidence supporting their association with (antimalarial drug) resistance.",
+      "guidance": "If the marker gene alteration(s) or haplotype(s) is not included in the WHO Compendium of Molecular Markers for Antimalarial Drug Resistance (https://www.who.int/tools/compendium-of-molecular-markers-for-antimalarial-drug-resistance), select a genotype classification value from the provided pick list.",
+      "ontology": "",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Validated marker"
+      ]
+    },
+    "genotype_classification_details": {
+      "description": "Details that provide additional context to the genotype classification, e.g.,  Prevalent in sub-Saharan Africa; Primarly seen in Central Africa, or Primary mediator of resistance.",
+      "guidance": "Free text description of additional context to the genotype classification, such as prevalent in sub-Saharan Africa; primarly seen in Central Africa; primary mediator of resistance; seen in Eastern but not Western Africa; uncommon in sub-Saharan Africa; or wild type associated with decreased susceptibility or decreases susceptibility.",
+      "ontology": "",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Primary mediator of resistance"
+      ]
+    },
+    "genotype_classification_evidence": {
+      "description": "Evidence supporting specific mutation, haplotype, or gene amplification associated with resistance.",
+      "guidance": "Select one or multiple values separated by comma(s) from the pick list provided.",
+      "ontology": "",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Laboratory evidence"
+      ]
+    },
+    "resistance_status": {
+      "description": "Classification into different types of resistance to drugs or combinations of drugs and to RDT diagnostic detection.",
+      "guidance": "Select one or multiple values separated by comma(s) from the pick list provided.",
+      "ontology": "",
+      "source_value_type": "Permitted value(s)",
+      "type": "string",
+      "examples": [
+        "Chloroquine resistance [IDOMAL:50000042], Sulphadoxine-pyrimethamine resistance [IDOMAL:50000036]."
+      ]
+    },
+    "authors": {
+      "description": "Names of individuals contributing to the processes of sample collection, sequence generation, analysis, and data submission.",
+      "guidance": "Include the first and last names of all individuals that should be attributed, separated by a comma.",
+      "ontology": "GENEPIO:0001517",
+      "source_value_type": "Free text",
+      "type": "string",
+      "examples": [
+        "Tejinder Singh, Fei Hu, Johnny Blogs"
+      ]
+    }
+  },
+  "required": [
+    "specimen_collector_sample_id",
+    "sample_collected_by",
+    "geo_loc_name_country",
+    "first_order_administrative_division",
+    "sample_collection_date",
+    "sample_collection_date_precision",
+    "organism",
+    "host_subject_id",
+    "host_scientific_name",
+    "sequenced_by",
+    "sequence_submitted_by",
+    "purpose_of_sequencing",
+    "sequencing_instrument"
+  ]
+}
