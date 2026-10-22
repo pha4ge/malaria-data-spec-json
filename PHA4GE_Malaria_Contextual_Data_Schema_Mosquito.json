@@ -191,7 +191,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "01/06/2024 00:00"
+        "2024-06-01"
       ]
     },
     "study_completion_date": {
@@ -202,7 +202,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "30/06/2025 00:00"
+        "2025-06-30"
       ]
     },
     "study_site_id": {
@@ -229,8 +229,11 @@
       "description": "The specific sex, either male, female, or mixed of the subject group being studied.",
       "guidance": "Pick a value from the pick list provided.",
       "ontology": "NCIT:C49696",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Female [NCIT:C46110]"
       ]
@@ -239,8 +242,11 @@
       "description": "An infectious disease control strategy that has a vector control action specification as part.",
       "guidance": "Select a value(s) from the pick-up list.",
       "ontology": "APOLLO:SV_00000308",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Indoor residual spraying vector control strategy [APOLLO:SV_00000391],  surface drainage [IDOMAL:0000680], Lido system [IDOMAL:0000679]"
       ]
@@ -249,8 +255,11 @@
       "description": "Strictly, a substance intended to kill members of the class Insecta. In common usage, any substance used for preventing, destroying, repelling or controlling insects.",
       "guidance": "Use standard classes. Select a value from the pick list provided.",
       "ontology": "CHEBI:24852",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "DDT [CHEBI:16130]"
       ]
@@ -443,7 +452,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "14/04/2025"
+        "2025-04-14"
       ]
     },
     "sample_collection_date_precision": {
@@ -464,7 +473,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "14/04/2025 00:00"
+        "2025-04-14"
       ]
     },
     "sample_collection_start_time": {
@@ -513,7 +522,7 @@
       "guidance": "Provide the numerical value of time.",
       "ontology": "GENEPIO:0100766",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         12
       ]
@@ -536,7 +545,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "20/03/2020 00:00"
+        "2020-03-20"
       ]
     },
     "specimen_title": {
@@ -674,7 +683,7 @@
       "guidance": "Provide number of known passages. If not passaged, put \"not applicable\"",
       "ontology": "GENEPIO:0001261",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         3
       ]
@@ -723,8 +732,11 @@
       "description": "A procedure used for the detection of the pathogen causing the disease.",
       "guidance": "Select all procedures used for parasite detection from the pick list provided in the template.",
       "ontology": "SNOMED:122441001",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "enzyme-linked immunosorbent assay [IDOMAL:0000222]"
       ]
@@ -767,7 +779,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "22/04/2025 00:00"
+        "2025-04-22"
       ]
     },
     "isolated_by": {
@@ -818,7 +830,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "15/07/1905 00:00"
+        "1905-07-15"
       ]
     },
     "isolate_received_date": {
@@ -829,7 +841,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "15/07/1905 00:00"
+        "1905-07-15"
       ]
     },
     "isolate_id": {
@@ -906,8 +918,11 @@
       "description": "The assemblage of traits or outward appearance of an individual. It is the product of interactions between genes and the environment.",
       "guidance": "The observable characteristics in an individual resulting from the expression of genes; the clinical presentation of an individual with a particular genotype.",
       "ontology": "NCIT:C16977",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Resistance to drug  [IDO:0000445]"
       ]
@@ -916,13 +931,16 @@
       "description": "Any method designed to identify the species of the insect specimen under study, usually caught /isolated from a field population.",
       "guidance": "",
       "ontology": "MIRO:30000005",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Species specific DNA hybridization [MIRO:30000041]"
       ]
     },
-    "second_host_taxid": {
+    "host_taxid": {
       "description": "NCBI Taxon id of the second host (mosquito vector), e.g., taxid:7157",
       "guidance": "",
       "ontology": "NCBITaxon",
@@ -932,37 +950,37 @@
         "NCBITaxon:7157"
       ]
     },
-    "second_host_subject_id": {
-      "description": "A unique identifier by which each second host (mosquito vector) can be referred to e.g. #131",
+    "host_subject_id": {
+      "description": "A unique identifier by which each host  can be referred to.",
       "guidance": "Should be a unique, user-defined identifier. This ID can help link laboratory data with epidemiological data, however, is likely sensitive information. Consult the data steward.",
-      "ontology": "",
+      "ontology": "GENEPIO:0001398",
       "source_value_type": "Alphanumeric",
       "type": "string",
       "examples": [
         "QJIUK039AR"
       ]
     },
-    "second_host_common_name": {
+    "host_common_name": {
       "description": "The commonly used name of the second host.",
       "guidance": "Common name or scientific name are required if there was a second host. Common name examples e.g. human, bat. Select a value from the pick list. If the sample was environmental, put \"not applicable\".",
-      "ontology": "",
+      "ontology": "GENEPIO:0001386",
       "source_value_type": "Permitted value",
       "type": "string",
       "examples": [
         "Anopheles mosquito"
       ]
     },
-    "second_host_scientific_name": {
+    "host_scientific_name": {
       "description": "The taxonomic, or scientific name of the second host.",
       "guidance": "Common name or scientific name are required if there was a second host. Scientific name should include the genus and species names of the host, e.g. Homo sapiens. Select a value from the pick list. If the sample was environmental, put \"not applicable\".",
-      "ontology": "",
-      "source_value_type": "Permitted value(s)",
+      "ontology": "GENEPIO:0001387",
+      "source_value_type": "Permitted value",
       "type": "string",
       "examples": [
         "Anopheles albimanus"
       ]
     },
-    "second_host_complex": {
+    "host_complex": {
       "description": "Vector species complex",
       "guidance": "Group of closely related species that are morphologically similar in all main life stages (egg, larva, pupa, and adult) but moleculary different. E.g., Anopheles gambiae complex.",
       "ontology": "NCBITaxon",
@@ -972,7 +990,7 @@
         "Anopheles gambiae complex"
       ]
     },
-    "second_host_group": {
+    "host_group": {
       "description": "Group of closely related species, that are different in one or more life stages and molecular different. E.g., Anopheles funestus group.",
       "guidance": "",
       "ontology": "NCBITaxon",
@@ -982,7 +1000,7 @@
         "Anopheles\u00a0hyrcanus\u00a0group\u00a0abdomen"
       ]
     },
-    "second_host_subspecies": {
+    "host_subspecies": {
       "description": "Name of sub_species of organism from which sample was obtained. https://www.ebi.ac.uk/ols4/ontologies/iceo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FNCBITaxon_subspecies",
       "guidance": "",
       "ontology": "NCBITaxon",
@@ -992,7 +1010,7 @@
         "Anopheles gambiae sensu stricto (s.s.) [NCBITaxon:7165]"
       ]
     },
-    "second_host_strain": {
+    "host_strain": {
       "description": "A strain of a species. https://www.ebi.ac.uk/ols4/ontologies/ncbitaxon/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FNCBITaxon_strain",
       "guidance": "If the isolate represents or is derived from, a lab reference strain or strain from a type culture collection, provide the strain identifier.",
       "ontology": "NCBITaxon",
@@ -1002,10 +1020,10 @@
         "Anopheles gambiae str. PEST [NCBI:txid180454]"
       ]
     },
-    "second_host_genotype": {
+    "host_genotype": {
       "description": "A genetic characteristics information that is about the genetic material of an organism and minimally includes information about the genetic background and can in addition contain information about specific alleles, genetic modifications, etc.",
       "guidance": "Genotype information can be: Mus musculus wild type (in this case the genetic population background information is Mus musculus), C57BL/6J Hnf1a+/- (in this case, C57BL/6J is the genetic population background information and Hnf1a+/- is the allele information",
-      "ontology": "",
+      "ontology": "OBI:0001305",
       "source_value_type": "Free text",
       "type": "string",
       "examples": [
@@ -1032,10 +1050,10 @@
         "Adult [UBERON:0007023]"
       ]
     },
-    "second_host_sex": {
+    "host_sex": {
       "description": "A subject sex is the phenotypic sex of given subject (human or animal) related to a given investigation, study, and/or specimen.",
       "guidance": "If known, select a value from the pick list.",
-      "ontology": "",
+      "ontology": "GENEPIO:0000031",
       "source_value_type": "Permitted value(s)",
       "type": "string",
       "examples": [
@@ -1046,23 +1064,29 @@
       "description": "A quality which refers to vectors.",
       "guidance": "An attribute of a vector is any measurable or descriptive property of that mosquito that affects transmission, biology, or ecology.",
       "ontology": "IDOMAL:0001013",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "endophagy [IDOMAL:0001045]"
       ]
     },
-    "second_host_health_state": {
+    "host_health_state": {
       "description": "Describes the health (or disease) status of the second host at the time of sample collection.",
       "guidance": "Report the physiological condition, other infection status, nutritional status, age (grade), or fitness condition of the mosquito vector. Select one or multiple values, from the pick list.",
-      "ontology": "",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "ontology": "GENEPIO:0001388",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Presence of filarial worms; Nutritional status: Sugar content (energy reserve): High"
       ]
     },
-    "second_vector_invasive_status": {
+    "vector_invasive_status": {
       "description": "This variable indicates whether the mosquitoes collected are considered invasive or native.",
       "guidance": "Note: An invasive species  is a non-native species that establishes in a new ecosystem, and causes, or has the potential to cause, harm to the environment, economy, or human health.",
       "ontology": "",
@@ -1077,7 +1101,7 @@
       "guidance": "Where known, provide the numerical value of population size, i.e. the number of people.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         10500
       ]
@@ -1097,7 +1121,7 @@
       "guidance": "Provide the numerical value of the population density in the sampling area.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         4
       ]
@@ -1187,7 +1211,7 @@
       "guidance": "Average temperature over the year. Record the numeric value of the annual mean temperature.",
       "ontology": "MIXS:0000642",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         26
       ]
@@ -1197,7 +1221,7 @@
       "guidance": "Average temperature over a defined season (e.g., winter, spring, summer, or autumn). Record the numeric value of the mean seasonal temperature.",
       "ontology": "MIXS:0000643",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         22
       ]
@@ -1207,7 +1231,7 @@
       "guidance": "Record the numeric value of the mean diurnal temperature range.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         10
       ]
@@ -1217,17 +1241,17 @@
       "guidance": "Record the numeric value of isothermality as a unitless index (often expressed as a percentage or as a ratio). For example: 45.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         45
       ]
     },
-    "temperature_seasonality_standard_deviation_100__value": {
+    "temperature_seasonality_standard_deviation_100_value": {
       "description": "Standard deviation of the monthly temperatures.",
       "guidance": "Record the numeric value of temperature seasonality, expressed as the standard deviation of the 12 monthly mean temperatures multiplied by 100.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         280
       ]
@@ -1237,7 +1261,7 @@
       "guidance": "Record the numeric value of the maximum temperature of the warmest month.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         32
       ]
@@ -1247,9 +1271,9 @@
       "guidance": "Record the numeric value of the minimum temperature of the coldest month.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "string",
+      "type": "number",
       "examples": [
-        "\u22125"
+        -5
       ]
     },
     "temperature_annual_range_value": {
@@ -1257,7 +1281,7 @@
       "guidance": "Record the numeric value of the temperature annual range.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         18
       ]
@@ -1267,7 +1291,7 @@
       "guidance": "Record the numeric value of the mean temperature of the wettest quarter.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         24
       ]
@@ -1277,7 +1301,7 @@
       "guidance": "Record the numeric value of the mean temperature of the driest quarter.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         12
       ]
@@ -1287,7 +1311,7 @@
       "guidance": "Record the numeric value of the mean temperature of the warmest quarter.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         28
       ]
@@ -1297,7 +1321,7 @@
       "guidance": "Record the numeric value of the mean temperature of the coldest quarter.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         2
       ]
@@ -1317,7 +1341,7 @@
       "guidance": "Record the numeric value of the average total precipitation that falls over a full year.",
       "ontology": "PRIDE:0000734",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         650
       ]
@@ -1327,7 +1351,7 @@
       "guidance": "Record the numeric value of the average total precipitation that falls during a specified season.",
       "ontology": "MIXS:0000645",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         120
       ]
@@ -1337,7 +1361,7 @@
       "guidance": "Record the numeric value of the average total precipitation that falls in the wettest month.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         80
       ]
@@ -1347,7 +1371,7 @@
       "guidance": "Record the numeric value of the average total precipitation that falls in the month of the year with the least precipitation (the driest month).",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         5
       ]
@@ -1367,7 +1391,7 @@
       "guidance": "Record the numeric value of the average total precipitation that falls in the wettest quarter.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         220
       ]
@@ -1377,7 +1401,7 @@
       "guidance": "Record the numeric value of the average total precipitation that falls during the three consecutive months with the least precipitation (the driest quarter of the year).",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         20
       ]
@@ -1387,7 +1411,7 @@
       "guidance": "Record the numeric value of the average total precipitation that falls during the three consecutive months with the highest mean temperature (the warmest quarter of the year).",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         220
       ]
@@ -1397,7 +1421,7 @@
       "guidance": "Record the numeric value of the average total precipitation that falls during the three consecutive months with the lowest mean temperature (the coldest quarter of the year).",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         120
       ]
@@ -1447,7 +1471,7 @@
       "guidance": "Provide the numerical value of the measured temperature.",
       "ontology": "GENEPIO:0100935",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         22
       ]
@@ -1547,7 +1571,7 @@
       "guidance": "Provide the numerical value of the measured temperature.",
       "ontology": "GENEPIO:0100821",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         15
       ]
@@ -1567,7 +1591,7 @@
       "guidance": "Provide the numerical value of the measured temperature.",
       "ontology": "GENEPIO:0100823",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         22
       ]
@@ -1720,7 +1744,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "15/02/2026 00:00"
+        "2026-02-15"
       ]
     },
     "nucleic_acid_quality_control": {
@@ -1788,7 +1812,7 @@
       "guidance": "The length of the DNA fragment generated by mechanical shearing or enzymatic digestion for the purposes of library preparation. Provide the fragment length in base pairs (do not include the units).",
       "ontology": "GENEPIO:0100843",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         400
       ]
@@ -1881,7 +1905,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "23/11/2025 00:00"
+        "2025-11-23"
       ]
     },
     "quality_control_method_name": {
@@ -2119,7 +2143,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0100827",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         423867
       ]
@@ -2129,7 +2153,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0100828",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         248236
       ]
@@ -2139,7 +2163,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0100829",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         150
       ]
@@ -2179,7 +2203,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0001482",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         387566
       ]
@@ -2189,7 +2213,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0001483",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         38677
       ]
@@ -2199,7 +2223,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0100846",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         34272
       ]
@@ -2209,7 +2233,7 @@
       "guidance": "Provide a numerical value.",
       "ontology": "GENEPIO:0100937",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         10
       ]
@@ -2219,7 +2243,7 @@
       "guidance": "Provide the genome completeness as a percent (no need to include units).",
       "ontology": "GENEPIO:0100844",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         85
       ]
@@ -2229,7 +2253,7 @@
       "guidance": "Provide the N50 value in Mb.",
       "ontology": "GENEPIO:0100938",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         150
       ]
@@ -2239,7 +2263,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0100830",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         2
       ]
@@ -2249,7 +2273,7 @@
       "guidance": "The number of N symbols present in the consensus fasta sequence, per 100kbp of sequence. Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0001484",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         300
       ]
@@ -2382,7 +2406,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "22/09/2025 00:00"
+        "2025-09-22"
       ]
     },
     "variant_calling_date": {
@@ -2393,7 +2417,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "22/09/2025 00:00"
+        "2025-09-22"
       ]
     },
     "multiplicity_of_infection": {
@@ -2401,7 +2425,7 @@
       "guidance": "In cases of polyclonal infection, report the number of detected Plasmodium strains.",
       "ontology": "UO:0010075",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         2
       ]
@@ -2413,7 +2437,7 @@
       "source_value_type": "Numeric",
       "type": "number",
       "examples": [
-        0.998792137
+        0.998792137460846
       ]
     },
     "recurrence_type": {
@@ -2430,8 +2454,11 @@
       "description": "A sequence data which is the name of a gene (typically) assigned by a person and/or according to a naming scheme.",
       "guidance": "A sequence data which is the name of a gene (typically) assigned by a person and/or according to a naming scheme. Report a gene name where the resistance-associated marker is found. Select standard gene names from the pick list.  If a desired gene name is not available in the pick list, select \"Other\" from the provided pick list and enter a standard gene name manually.",
       "ontology": "GENEPIO:0100599",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Kelch 13 Propeller Domain Protein (pfkelch13)"
       ]
@@ -2440,8 +2467,11 @@
       "description": "A sequence data which is the short name of a gene typically derived from the gene name.",
       "guidance": "A sequence data which is the short name of a gene typically derived from the gene name. Use standard gene symbols from the pick list. If a desired gene symbol is not available in the pick list, select \"Other\" from the provided pick list and enter a standard gene symbol manually.",
       "ontology": "GENEPIO:0100598",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "k13"
       ]
@@ -2450,8 +2480,11 @@
       "description": "A genetic characteristics information that is about known changes or the lack thereof from the genetic background, including allele information, duplication, insertion, and deletion.",
       "guidance": "Select one or more gene alterations associated with resistance from the provided pick list. Gene alterations and their resulting drug resistance classification are sourced from the WHO Compendium of Molecular Markers for Antimalarial Drug Resistance (https://www.who.int/tools/compendium-of-molecular-markers-for-antimalarial-drug-resistance). If a desired alteration is not available in the pick list, select \"Other\" from the provided pick list and enter the alteration term(s) manually. Multiple alterations are formatted following the conventions in the WHO Compendium:\n1 - Multiple alterations within a single gene\nAlterations use standard amino-acid substitution notation, separated by a plus sign (+).\nExample: crt C72S + K76T + A220S + N326D + I356L\n2 - Alterations in multiple genes\nGene symbols are listed, separated by an ampersand (&), followed by their corresponding alterations. \nExample: dhfr & dhps N51I + C59R + S108N & A437G + A581G\n3 - Wild\u2011type codons\nWild-type (reference) codons included in the genotype are grouped in parentheses.\nExample: crt (C72C + V73V) + M74I + N75E + K76T\n                  crt C72S + (V73V + M74M + N75N) + K76T",
       "ontology": "OBI:0001364",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "crt K76T"
       ]
@@ -2460,8 +2493,11 @@
       "description": "A set of discrete, genetically-linked sequence alterations that reside on the same chromosomal strand and are typically co-inherited within a haplotype block.",
       "guidance": "Select a haplotype term from the provided pick list. Haplotypes and their resulting drug resistance classification are sourced from the WHO Compendium of Molecular Markers for Antimalarial Drug Resistance (https://www.who.int/tools/compendium-of-molecular-markers-for-antimalarial-drug-resistance). If the desired haplotype is not available, select \"Other\" from the provided pick list and enter the haplotype manually. Haplotypes are formatted following the conventions in the WHO Compendium: \ngene symbol (codon positions separated by \u201c-\u201d) followed by the amino-acid haplotype representing substitutions at those codon positions. The haplotype letters correspond to the amino acids present at the specified codon positions. \nE.g., dhfr (N51-C59-S108-I164) IRNI; dhps (S436-A437-K540-A581-A613) SGKAA; crt (K76) T; or mdr1 (N86-Y184-D1246) YFD.",
       "ontology": "GENO:0000871",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "dhps (I431-S436-A437-K540-A581-A613) IAAKAA"
       ]
@@ -2470,8 +2506,11 @@
       "description": "Marker category based on the type(s) of evidence supporting their association with (antimalarial drug) resistance.",
       "guidance": "If the marker gene alteration(s) or haplotype(s) is not included in the WHO Compendium of Molecular Markers for Antimalarial Drug Resistance (https://www.who.int/tools/compendium-of-molecular-markers-for-antimalarial-drug-resistance), select a genotype classification value from the provided pick list.",
       "ontology": "",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Validated marker"
       ]
@@ -2490,8 +2529,11 @@
       "description": "Evidence supporting specific mutation, haplotype, or gene amplification associated with resistance.",
       "guidance": "Select one or multiple values separated by comma(s) from the pick list provided.",
       "ontology": "",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Laboratory evidence"
       ]
@@ -2500,8 +2542,11 @@
       "description": "Classification into different types of resistance to drugs or combinations of drugs and to RDT diagnostic detection.",
       "guidance": "Select one or multiple values separated by comma(s) from the pick list provided.",
       "ontology": "",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Chloroquine resistance [IDOMAL:50000042], Sulphadoxine-pyrimethamine resistance [IDOMAL:50000036]."
       ]
@@ -2525,7 +2570,7 @@
     "sample_collection_date",
     "sample_collection_date_precision",
     "sample_collection_start_date",
-    "second_host_scientific_name",
+    "host_scientific_name",
     "sequenced_by",
     "sequence_submitted_by",
     "purpose_of_sequencing",

@@ -211,7 +211,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "01/06/2024 00:00"
+        "2024-06-01"
       ]
     },
     "study_completion_date": {
@@ -222,7 +222,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "30/06/2025 00:00"
+        "2025-06-30"
       ]
     },
     "study_site_id": {
@@ -250,7 +250,7 @@
       "guidance": "Where known, provide the numerical value of population size, i.e. the number of people.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         10500
       ]
@@ -270,7 +270,7 @@
       "guidance": "Provide the numerical value of the population density in the sampling area.",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         4
       ]
@@ -290,7 +290,7 @@
       "guidance": "",
       "ontology": "STATO:0000088",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         800
       ]
@@ -300,7 +300,7 @@
       "guidance": "",
       "ontology": "",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         400
       ]
@@ -309,8 +309,11 @@
       "description": "A description of the age category of the sample study population at the time of sampling.",
       "guidance": "Age bins intervals have been provided. Age bin can be used as an alternative for exact age for privacy concerns.",
       "ontology": "",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "15-49 years"
       ]
@@ -319,8 +322,11 @@
       "description": "The specific sex, either male, female, or mixed of the subject group being studied.",
       "guidance": "Pick a value from the pick list provided. Select both male and female values for mixed study group.",
       "ontology": "NCIT:C49696",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Female [NCIT:C46110]"
       ]
@@ -339,8 +345,11 @@
       "description": "A plan specification whose objective specification is an infectious disease control objective specification.",
       "guidance": "The essential goal of an infectious disease control strategy is to protect the susceptible organisms in a population. Select value(s) from the pick-up list. One or more values can be selected if multiple control strategies are involved.",
       "ontology": "APOLLO:SV_00000086",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Chemoprophylaxis [IDOMAL:0000122]"
       ]
@@ -506,7 +515,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "14/04/2025"
+        "2025-04-14"
       ]
     },
     "sample_collection_date_precision": {
@@ -547,7 +556,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "20/03/2020 00:00"
+        "2020-03-20"
       ]
     },
     "anatomical_material": {
@@ -655,7 +664,7 @@
       "guidance": "Provide number of known passages. If not passaged, put \"not applicable\"",
       "ontology": "GENEPIO:0001261",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         3
       ]
@@ -704,8 +713,11 @@
       "description": "A procedure used for the diagnosis of malaria, including the precise pathogen causing the disease.",
       "guidance": "A procedure used for the diagnosis of malaria, including the precise pathogen causing the disease. Select all diagnostic procedures employed for malaria diagnosis from the pick list provided in the template.",
       "ontology": "IDOMAL:0000049",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "HRP-2 detection method [IDOMAL:0000220], use of nucleic acid probe [IDOMAL:0000562]"
       ]
@@ -748,7 +760,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "22/04/2025 00:00"
+        "2025-04-22"
       ]
     },
     "isolated_by": {
@@ -799,7 +811,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "15/07/1905 00:00"
+        "1905-07-15"
       ]
     },
     "isolate_received_date": {
@@ -810,7 +822,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "15/07/1905 00:00"
+        "1905-07-15"
       ]
     },
     "isolate_id": {
@@ -887,8 +899,11 @@
       "description": "The assemblage of traits or outward appearance of an individual. It is the product of interactions between genes and the environment.",
       "guidance": "The observable characteristics in an individual resulting from the expression of genes; the clinical presentation of an individual with a particular genotype.",
       "ontology": "NCIT:C16977",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Resistance to drug  [IDO:0000445]"
       ]
@@ -917,7 +932,7 @@
       "description": "The commonly used name of the host.",
       "guidance": "Common name or scientific name are required if there was a host. Common name examples e.g. human, bat. Select a value from the pick list. If the sample was environmental, put \"not applicable\".",
       "ontology": "GENEPIO:0001386",
-      "source_value_type": "Permitted value(s)",
+      "source_value_type": "Permitted value",
       "type": "string",
       "examples": [
         "Human [NCBITaxon:9606]"
@@ -927,7 +942,7 @@
       "description": "The taxonomic, or scientific name of the host.",
       "guidance": "Common name or scientific name are required if there was a host. Scientific name examples e.g. Homo sapiens. Select a value from the pick list. If the sample was environmental, put \"not applicable\".",
       "ontology": "GENEPIO:0001387",
-      "source_value_type": "Permitted value(s)",
+      "source_value_type": "Permitted value",
       "type": "string",
       "examples": [
         "Homo sapiens [NCBITaxon:9606]"
@@ -938,7 +953,7 @@
       "guidance": "If known, provide age. Age-binning is also acceptable.",
       "ontology": "GENEPIO:0001392",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         79
       ]
@@ -1041,7 +1056,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "16/03/2020 00:00"
+        "2020-03-16"
       ]
     },
     "signs_and_symptoms": {
@@ -1078,8 +1093,11 @@
       "description": "A general therapeutic procedure applied for malaria.",
       "guidance": "",
       "ontology": "IDOMAL:0001283",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "chemotherapy of malaria [IDOMAL:0000050]"
       ]
@@ -1088,8 +1106,11 @@
       "description": "Agents used in the treatment of malaria. They are usually classified on the basis of their action against plasmodia at different stages in their life cycle in the human. (From AMA, Drug Evaluations Annual, 1992, p1585).",
       "guidance": "Select all antimalarial agents used during the therapeutic course from the pick list provided in the template.",
       "ontology": "mesh:D000962",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Chloroquine [NCIT:C61671]"
       ]
@@ -1119,7 +1140,7 @@
       "guidance": "Record how many doses of the vaccine the host has received.",
       "ontology": "GENEPIO:0001406",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         2
       ]
@@ -1132,7 +1153,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "26/02/2021 00:00"
+        "2021-02-26"
       ]
     },
     "vaccination_date_dose_2": {
@@ -1143,7 +1164,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "27/08/2021 00:00"
+        "2021-08-27"
       ]
     },
     "vaccination_date_dose_3": {
@@ -1154,7 +1175,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "28/02/2022 00:00"
+        "2022-02-28"
       ]
     },
     "vaccination_date_dose_4": {
@@ -1165,7 +1186,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "01/08/2022 00:00"
+        "2022-08-01"
       ]
     },
     "location_of_exposure_geo_loc_name_country": {
@@ -1216,7 +1237,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "16/03/2020 00:00"
+        "2020-03-16"
       ]
     },
     "most_recent_travel_return_date": {
@@ -1227,7 +1248,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "26/04/2020 00:00"
+        "2020-04-26"
       ]
     },
     "travel_history": {
@@ -1324,8 +1345,11 @@
       "description": "A data field that describes the species of Plasmodium responsible for a prior malaria infection.",
       "guidance": "Select the \"Plasmodium\" species from the picklist . If another Plasmodium species is being sequenced, provide the taxonomic name from NCBITaxon. Search for taxonomy terms at https://www.ebi.ac.uk/ols/ontologies/ncbitaxon.",
       "ontology": "",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Plasmodium falciparum [NCBITaxon:5833]"
       ]
@@ -1338,7 +1362,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "22/01/2021 00:00"
+        "2021-01-22"
       ]
     },
     "prior_antimalarial_treatment": {
@@ -1365,8 +1389,11 @@
       "description": "A data field which describes the name of the antimalarial agent administered during the prior malarial infection.",
       "guidance": "Provide the name of the antimalarial agent administered during the most recent prior infection. If no treatment was administered, put \"No treatment\". If multiple antiviral agents were administered, list them all separated by commas.",
       "ontology": "",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Chloroquine [NCIT:C61671]"
       ]
@@ -1379,7 +1406,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "28/01/2021 00:00"
+        "2021-01-28"
       ]
     },
     "sequencing_project_name": {
@@ -1520,7 +1547,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "15/02/2026 00:00"
+        "2026-02-15"
       ]
     },
     "nucleic_acid_quality_control": {
@@ -1588,7 +1615,7 @@
       "guidance": "The length of the DNA fragment generated by mechanical shearing or enzymatic digestion for the purposes of library preparation. Provide the fragment length in base pairs (do not include the units).",
       "ontology": "GENEPIO:0100843",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         400
       ]
@@ -1681,7 +1708,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "23/11/2025 00:00"
+        "2025-11-23"
       ]
     },
     "quality_control_method_name": {
@@ -1919,7 +1946,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0100827",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         423867
       ]
@@ -1929,7 +1956,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0100828",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         248236
       ]
@@ -1939,7 +1966,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0100829",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         150
       ]
@@ -1979,7 +2006,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0001482",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         387566
       ]
@@ -1989,7 +2016,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0001483",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         38677
       ]
@@ -1999,7 +2026,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0100846",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         34272
       ]
@@ -2009,7 +2036,7 @@
       "guidance": "Provide a numerical value.",
       "ontology": "GENEPIO:0100937",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         10
       ]
@@ -2019,7 +2046,7 @@
       "guidance": "Provide the genome completeness as a percent (no need to include units).",
       "ontology": "GENEPIO:0100844",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         85
       ]
@@ -2029,7 +2056,7 @@
       "guidance": "Provide the N50 value in Mb.",
       "ontology": "GENEPIO:0100938",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         150
       ]
@@ -2039,7 +2066,7 @@
       "guidance": "Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0100830",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         2
       ]
@@ -2049,7 +2076,7 @@
       "guidance": "The number of N symbols present in the consensus fasta sequence, per 100kbp of sequence. Provide a numerical value (no need to include units).",
       "ontology": "GENEPIO:0001484",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         300
       ]
@@ -2182,7 +2209,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "22/09/2025 00:00"
+        "2025-09-22"
       ]
     },
     "variant_calling_date": {
@@ -2193,7 +2220,7 @@
       "type": "string",
       "format": "date",
       "examples": [
-        "22/09/2025 00:00"
+        "2025-09-22"
       ]
     },
     "multiplicity_of_infection": {
@@ -2201,7 +2228,7 @@
       "guidance": "In cases of polyclonal infection, report the number of detected Plasmodium strains.",
       "ontology": "UO:0010075",
       "source_value_type": "Numeric",
-      "type": "integer",
+      "type": "number",
       "examples": [
         2
       ]
@@ -2213,7 +2240,7 @@
       "source_value_type": "Numeric",
       "type": "number",
       "examples": [
-        0.998792137
+        0.998792137460846
       ]
     },
     "recurrence_type": {
@@ -2230,8 +2257,11 @@
       "description": "A sequence data which is the name of a gene (typically) assigned by a person and/or according to a naming scheme.",
       "guidance": "A sequence data which is the name of a gene (typically) assigned by a person and/or according to a naming scheme. Report a gene name where the resistance-associated marker is found. Select standard gene names from the pick list.  If a desired gene name is not available in the pick list, select \"Other\" and enter a standard gene name manually.",
       "ontology": "GENEPIO:0100599",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Kelch 13 Propeller Domain Protein (pfkelch13)"
       ]
@@ -2240,8 +2270,11 @@
       "description": "A sequence data which is the short name of a gene typically derived from the gene name.",
       "guidance": "A sequence data which is the short name of a gene typically derived from the gene name. Use standard gene symbols from the pick list. If a desired gene symbol is not available in the pick list, select \"Other\" and enter a standard gene symbol manually.",
       "ontology": "GENEPIO:0100598",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "k13"
       ]
@@ -2250,8 +2283,11 @@
       "description": "A genetic characteristics information that is about known changes or the lack thereof from the genetic background, including allele information, duplication, insertion, and deletion.",
       "guidance": "Select one or more gene alterations associated with resistance from the provided pick list. Gene alterations and their resulting drug resistance classification are sourced from the WHO Compendium of Molecular Markers for Antimalarial Drug Resistance (https://www.who.int/tools/compendium-of-molecular-markers-for-antimalarial-drug-resistance). If a desired alteration is not available in the pick list, select \"Other\" and enter the alteration term(s) manually. Multiple alterations are formatted following the conventions in the WHO Compendium:\n1 - Multiple alterations within a single gene\nAlterations use standard amino-acid substitution notation, separated by a plus sign (+).\nExample: crt C72S + K76T + A220S + N326D + I356L\n2 - Alterations in multiple genes\nGene symbols are listed, separated by an ampersand (&), followed by their corresponding alterations. \nExample: dhfr & dhps N51I + C59R + S108N & A437G + A581G\n3 - Wild\u2011type codons\nWild-type (reference) codons included in the genotype are grouped in parentheses.\nExample: crt (C72C + V73V) + M74I + N75E + K76T\n                  crt C72S + (V73V + M74M + N75N) + K76T",
       "ontology": "OBI:0001364",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "crt K76T"
       ]
@@ -2260,8 +2296,11 @@
       "description": "A set of discrete, genetically-linked sequence alterations that reside on the same chromosomal strand and are typically co-inherited within a haplotype block.",
       "guidance": "Select a haplotype term from the provided pick list. Haplotypes and their resulting drug resistance classification are sourced from the WHO Compendium of Molecular Markers for Antimalarial Drug Resistance (https://www.who.int/tools/compendium-of-molecular-markers-for-antimalarial-drug-resistance). If the desired haplotype is not available, select \"Other\" and enter the haplotype manually. Haplotypes are formatted following the conventions in the WHO Compendium: \ngene symbol (codon positions separated by \u201c-\u201d) followed by the amino-acid haplotype representing substitutions at those codon positions. The haplotype letters correspond to the amino acids present at the specified codon positions. \nE.g., dhfr (N51-C59-S108-I164) IRNI; dhps (S436-A437-K540-A581-A613) SGKAA; crt (K76) T; or mdr1 (N86-Y184-D1246) YFD.",
       "ontology": "GENO:0000871",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "dhps (I431-S436-A437-K540-A581-A613) IAAKAA"
       ]
@@ -2270,8 +2309,11 @@
       "description": "Marker category based on the type(s) of evidence supporting their association with (antimalarial drug) resistance.",
       "guidance": "If the marker gene alteration(s) or haplotype(s) is not included in the WHO Compendium of Molecular Markers for Antimalarial Drug Resistance (https://www.who.int/tools/compendium-of-molecular-markers-for-antimalarial-drug-resistance), select a genotype classification value from the provided pick list.",
       "ontology": "",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Validated marker"
       ]
@@ -2290,8 +2332,11 @@
       "description": "Evidence supporting specific mutation, haplotype, or gene amplification associated with resistance.",
       "guidance": "Select one or multiple values separated by comma(s) from the pick list provided.",
       "ontology": "",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Laboratory evidence"
       ]
@@ -2300,8 +2345,11 @@
       "description": "Classification into different types of resistance to drugs or combinations of drugs and to RDT diagnostic detection.",
       "guidance": "Select one or multiple values separated by comma(s) from the pick list provided.",
       "ontology": "",
-      "source_value_type": "Permitted value(s)",
-      "type": "string",
+      "source_value_type": "Permitted value(s) - multiselect",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
       "examples": [
         "Chloroquine resistance [IDOMAL:50000042], Sulphadoxine-pyrimethamine resistance [IDOMAL:50000036]."
       ]
