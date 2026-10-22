@@ -61,7 +61,19 @@ The `Required/Optional` column is taken from the template's colour coding: field
 | Example(s) | Example of the expected field value. |
 
 #### Output
-The tool creates a JSON Schema (draft 2019-09). Each field label is converted to a snake_case property key. Each property includes the field's description, guidance, ontology ID, original source value type, JSON Schema type (with format/items where applicable) and example value. Only fields marked **Required** are listed in the schema's `required` array.
+The tool creates a JSON Schema (draft 2019-09). Each field label is converted to a snake_case property key (e.g. `geo_loc_name(country)` becomes `geo_loc_name_country`). Each property includes the field's description, guidance, ontology ID, original source value type, JSON Schema type (with format/items where applicable) and example value. Only fields marked **Required** are listed in the schema's `required` array.
+
+The JSON Schema type is derived from the `Type of Variable(s)` column, as shown in Table 2.
+
+**Table 2** Mapping of `Type of Variable(s)` to JSON Schema type.
+| Type of Variable(s) | JSON Schema |
+|:--|:--|
+| Contains "multiselect" (e.g. "Permitted value(s) - multiselect") | `array` of `string` |
+| "Numeric" | `number` (accepts whole and decimal values) |
+| "Structured format", where the field name contains "date" | `string` with `"format": "date"` (ISO 8601, YYYY-MM-DD) |
+| Anything else (e.g. "Alphanumeric", "Free text", "Permitted value(s)") | `string` |
+
+Fields that accept more than one value must say "multiselect" in their `Type of Variable(s)` entry in the Field Reference Guide, matching the "Pick list (Multiple selection)" marking on the template sheet.
 
 Example outputs are available in this repository as `PHA4GE_Malaria_Contextual_Data_Schema_Human.json` and `PHA4GE_Malaria_Contextual_Data_Schema_Mosquito.json`.
 
@@ -70,3 +82,4 @@ For more information or assistance, contact `elulamba@pha4ge.org` or open an iss
 
 ## Acknowledgements
 This tool is adapted from PHA4GE's [SARS-CoV-2 Data Specification Processing Tool](https://github.com/pha4ge/sars-cov-2-data-spec-json), which pioneered this approach of converting a simple tabular description of fields into machine-processable JSON Schema. `malaria_table_json.py` builds on that tool's design, adapted to the column layout and value-type vocabulary of the MCMS field tables.
+ß
